@@ -20,10 +20,18 @@ if (isset($_POST['name'])) {
     $name = trim($_POST['name']);
     $email = $_POST['email'];
     $password = $_POST['password'];
-    // $image = $_FILES['avatar'];
+    $image = $_FILES['avatar'];
 
-    $database = new PDO('sqlite:database.db');
-    $database->exec("INSERT INTO users (name, email, password) VALUES ('$name', '$email', '$password')");
+    // Text saying if uploaded image was succefull
+
+    // if ($email['type'] !== 'image/png') {
+    //     echo 'Ops something went wrong, perhaps the image file type is not allowed.';
+    // } else {
+    //     echo 'Welcome you are now a member and can start orgonizing your life!';
+    // }
+
+    // $database = new PDO('sqlite:database.db');
+    $database->prepare("INSERT INTO users (name, email, password) VALUES ('$name', '$email', '$password')");
 }
 
 
