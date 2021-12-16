@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-danger">
     <a class="navbar-brand" href="#"><?php echo $config['title']; ?></a>
 
     <ul class="navbar-nav">
@@ -10,9 +10,6 @@
             <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/about.php' ? 'active' : ''; ?>" href="/about.php">About</a>
         </li>
 
-        <li class="nav-item">
-            <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/signUp.php' ? 'active' : ''; ?>" href="/signUp.php">Sign up</a>
-        </li>
 
         <li class="nav-item">
             <?php if (isset($_SESSION['user'])) : ?>
@@ -20,8 +17,11 @@
             <?php else : ?>
                 <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/login.php' ? 'active' : ''; ?>" href="login.php">Login</a>
 
-
-            <?php endif; ?>
+        <li class="nav-item">
+            <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/signUp.php' ? 'active' : ''; ?>" href="/signUp.php">Sign up</a>
         </li>
+
+    <?php endif; ?>
+    </li>
     </ul>
 </nav>
