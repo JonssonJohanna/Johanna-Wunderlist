@@ -20,7 +20,7 @@
 
     </form>
 
-    <form method="GET" action="/signUp.php">
+    <form method="GET" action="signUp.php">
         <button type="submit" class="btn btn-info">Sign up</button>
     </form>
     <!-- <button onclick="window.location.href='signup.php'">Sign up</button> -->
