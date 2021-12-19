@@ -18,7 +18,7 @@
                 <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/login.php' ? 'active' : ''; ?>" href="login.php">Login</a>
 
         <li class="nav-item">
-            <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/signUp.php' ? 'active' : ''; ?>" href="/signUp.php">Sign up</a>
+            <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === 'signUp.php' ? 'active' : ''; ?>" href="/signUp.php">Sign up</a>
         </li>
 
     <?php endif; ?>
