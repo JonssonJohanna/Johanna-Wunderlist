@@ -9,8 +9,9 @@
 
 
     <?php if (isset($_SESSION['user'])) : ?>
-        <p>Welcome, <?php echo $_SESSION['user']['name']; ?>!</p>
+        <p>Welcome, <?php echo $_SESSION['user']['name']; ?>, you are logged in!</p>
     <?php endif; ?>
+
 
 </article>
 
