@@ -5,7 +5,7 @@
 <article>
     <h1>Create an account</h1>
 
-    <form action="app/users/register.php" method="post" enctype="multipart/form-data">
+    <form action="app/users/register.php" method="post">
         <!-- This should be in it own form -->
         <div class="mb-3">
             <label for="name">Name</label>
@@ -24,14 +24,16 @@
             <small class="form-text">Please provide the your password (passphrase).</small>
         </div>
         <!-- This should be in ist own form -->
-        <div>
-            <label for="profile_image">Upload optional image here</label>
-            <input type="file" name="profile_image" id="profile_image" accept=".jpg, .png" required>
+        <form action="app/users/images.php" method="post" enctype="multipart/form-data">
+            <div>
+                <label for="profile_image">Upload optional image here</label>
+                <input type="file" name="profile_image" id="profile_image" accept=".jpg, .png" required>
 
-        </div>
+            </div>
 
 
-        <button type="submit" class="btn btn-info">Sign up</button>
+            <button type="submit" class="btn btn-info">Sign up</button>
+        </form>
     </form>
 </article>
 
