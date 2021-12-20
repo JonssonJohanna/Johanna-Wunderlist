@@ -12,13 +12,16 @@ if (isset($_POST['name'], $_POST['email'], $_POST['password'])) {
     $email = trim(filter_var($_POST['email'], FILTER_SANITIZE_EMAIL));
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-    $insertSQL = "INSERT INTO users (name, email, password) VALUES (':name', ':email', ':password')";
-    $sql = $database->prepare($insertSQL);
+    // $sqlIte = "INSERT INTO users (name, email, password) VALUES (':name', ':email', ':password')";
 
+
+    $sql = $database->prepare("INSERT INTO users (name, email, password) VALUES (:name, :email, :password)");
     $sql->bindParam(':name', $name, PDO::PARAM_STR);
     $sql->bindParam(':email', $email, PDO::PARAM_STR);
     $sql->bindParam(':password', $password, PDO::PARAM_STR);
 
+
+    // runs the email, name and password in database
     $sql->execute();
 }
 
