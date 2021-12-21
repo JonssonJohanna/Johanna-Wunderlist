@@ -9,8 +9,9 @@ require __DIR__ . '/../autoload.php';
 // To add a users name, email, password into database
 if (isset($_POST['name'], $_POST['email'], $_POST['password'])) {
     $name = trim(filter_var($_POST['name'], FILTER_SANITIZE_STRING));
-    $email = trim(filter_var($_POST['email'], FILTER_SANITIZE_EMAIL));
+    $email = trim(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL));
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    // validate email to ensure user to fill in an correct email
 
     // $sqlIte = "INSERT INTO users (name, email, password) VALUES (':name', ':email', ':password')";
 
