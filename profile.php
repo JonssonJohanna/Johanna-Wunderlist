@@ -5,19 +5,28 @@
 <article>
     <h1>Edit your profile</h1>
 
-    <form action="/app/users/images.php" method="post" enctype="multipart/form-data">
+    <form action="/app/users/profile.php" method="post" enctype="multipart/form-data">
         <!-- This should be in ist own form -->
         <!-- <form action="app/users/images.php" method="post" enctype="multipart/form-data"> -->
         <div>
             <label for="profile_image">Upload optional image here</label>
             <input type="file" name="profile_image" id="profile_image" accept=".jpg, .png" required>
 
+            <button type="submit" class="btn btn-info">Upload image</button>
         </div>
 
+    </form>
 
-        <button type="submit" class="btn btn-info">Upload image</button>
+    <form action="app/users/profile.php" method="post">
+        <div class="mb-3">
+            <label for="email">Email</label>
+            <input class="form-control" type="email" name="email" id="email" placeholder="arthur.meland@lo.com" required>
+            <small class="form-text">Please provide your new email address.</small>
+            <button type="submit" class="btn btn-info">Upload image</button>
+        </div>
 
     </form>
+
 </article>
 
 <?php require __DIR__ . '/views/footer.php'; ?>
