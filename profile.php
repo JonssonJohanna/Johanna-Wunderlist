@@ -15,7 +15,7 @@
         </div>
 
 
-        <button type="submit" class="btn btn-info">Sign up</button>
+        <button type="submit" class="btn btn-info">Upload image</button>
 
     </form>
 </article>
