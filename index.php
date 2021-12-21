@@ -6,13 +6,14 @@
     <p>This is the home page.</p>
 
 
-
-
     <?php if (isset($_SESSION['user'])) : ?>
         <p>Welcome, <?php echo $_SESSION['user']['name']; ?>, you are logged in!</p>
+
     <?php endif; ?>
-
-
+    <?php if (isset($_SESSION['user']['profile_image'])) :
+    ?>
+        <img src="uploads/<?php echo $_SESSION['user']['profile_image'] ?>">
+    <?php endif; ?>
 </article>
 
 <?php require __DIR__ . '/views/footer.php'; ?>
