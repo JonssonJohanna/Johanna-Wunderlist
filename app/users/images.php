@@ -15,20 +15,22 @@ if (isset($_FILES['profile_image'])) {
     $alert = 'The file is uploaded';
 
     // Adds a row in database
-    $insertSQL = ("INSERT INTO users (profile_image) VALUES (:profile_image)");
+    $insertSQL = ("UPDATE users SET profile_image = :profile_image WHERE id = :id");
 
     $sql = $database->prepare($insertSQL);
+
     $sql->bindParam(':profile_image', $avatar, PDO::PARAM_STR);
-    // $sql->bindParam(':id', $_SESSION['user']['id'], PDO::PARAM_INT);
+    $sql->bindParam(':id', $_SESSION['user']['id'], PDO::PARAM_INT);
     $sql->execute();
 };
 
+// Text saying if uploaded image was succefull
+
+if ($image['type'] !== 'image/png') {
+    echo 'Ops something went wrong, perhaps the image file type is not allowed.';
+} else {
+    echo 'Welcome you are now a member and can start orgonizing your life!';
+}
 
 
-    // Text saying if uploaded image was succefull
-
-    // if ($image['type'] !== 'image/png') {
-    //     echo 'Ops something went wrong, perhaps the image file type is not allowed.';
-    // } else {
-    //     echo 'Welcome you are now a member and can start orgonizing your life!';
-    // }
+redirect('/index.php');
