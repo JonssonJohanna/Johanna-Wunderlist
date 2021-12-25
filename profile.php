@@ -5,7 +5,7 @@
 <article>
     <h1>Edit your profile</h1>
 
-    <form action="/app/users/profile.php" method="post" enctype="multipart/form-data">
+    <form action="/app/users/update/image.php" method="post" enctype="multipart/form-data">
         <!-- This should be in ist own form -->
         <!-- <form action="app/users/images.php" method="post" enctype="multipart/form-data"> -->
         <div>
@@ -17,12 +17,12 @@
 
     </form>
 
-    <form action="app/users/profile.php" method="post">
+    <form action="/app/users/update/email.php" method="post">
         <div class="mb-3">
             <label for="email">Email</label>
-            <input class="form-control" type="email" name="email" id="email" placeholder="arthur.meland@lo.com" required>
+            <input class="form-control" type="email" name="newEmail" id="email" placeholder="enter your new email" required>
             <small class="form-text">Please provide your new email address.</small>
-            <button type="submit" class="btn btn-info">Upload image</button>
+            <button type="submit" class="btn btn-info">Update new email</button>
         </div>
 
     </form>
