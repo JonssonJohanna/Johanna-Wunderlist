@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-require __DIR__ . '/../autoload.php';
+require __DIR__ . '/../../autoload.php';
 
 // add users uploaded images in 'uploads' and in database
 if (isset($_FILES['profile_image'])) {
@@ -36,22 +36,12 @@ if (isset($_FILES['profile_image'])) {
 
 // Text saying if uploaded image was succefull
 
-if ($image['type'] !== 'image/png') {
-    echo 'Ops something went wrong, perhaps the image file type is not allowed.';
-} else {
-    echo 'Welcome you are now a member and can start orgonizing your life!';
-}
-
-// user editinig email
-// if (isset($_SESSION['email'])) {
-//     $insertSQL = ("UPDATE users SET email = :email WHERE id = :id");
-//     $sql = $database->prepare($insertSQL);
-//     $sql->bindParam(':email', $_SESSION['user']['email'], PDO::PARAM_STR);
-
-//     $sql->execute();
-
-//     $_SESSION['email'] = $sql->fetch(PDO::FETCH_ASSOC);
+// if ($image['type'] !== 'image/png') {
+//     echo 'Ops something went wrong, perhaps the image file type is not allowed.';
+// } else {
+//     echo 'Welcome you are now a member and can start orgonizing your life!';
 // }
+
 
 
 redirect('/index.php');
