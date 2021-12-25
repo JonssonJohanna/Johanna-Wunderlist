@@ -18,7 +18,8 @@
         <li class="nav-item">
             <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/login.php' ? 'active' : ''; ?>" href="/profile.php">Edit profile</a>
         </li>
-    <?php else :
+    <?php
+            else :
     ?>
         <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/login.php' ? 'active' : ''; ?>" href="/login.php">Login</a>
 
