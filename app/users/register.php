@@ -7,14 +7,12 @@ require __DIR__ . '/../autoload.php';
 // In this file we register a new user.
 
 // To add a users name, email, password into database
-if (isset($_POST['name'], $_POST['email'], $_POST['password'])) {
+if (isset($_POST['name'], $_POST['email'], $_POST['password'], $_POST['repeatPassword'])) {
     $name = trim(filter_var($_POST['name'], FILTER_SANITIZE_STRING));
     $email = trim(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL));
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $repeatPassword = password_hash($_POST['repeatPassword'], PASSWORD_DEFAULT);
     // validate email to ensure user to fill in an correct email
-
-    // $sqlIte = "INSERT INTO users (name, email, password) VALUES (':name', ':email', ':password')";
-
 
     $sql = $database->prepare("INSERT INTO users (name, email, password) VALUES (:name, :email, :password)");
     $sql->bindParam(':name', $name, PDO::PARAM_STR);
@@ -25,6 +23,13 @@ if (isset($_POST['name'], $_POST['email'], $_POST['password'])) {
     // runs the email, name and password in database
     $sql->execute();
 }
+if ($name === "") {
+    $_SESSION['messages'] = "The name field is missing.";
+    header("Location: /../../signUp.php");
+    exit;
+}
+
+
 
 
 redirect('/index.php');
