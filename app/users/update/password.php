@@ -15,13 +15,19 @@ if (isset($_POST['newPassword'])) {
     // $sql->bindParam(':id', $_SESSION['user']['id'], PDO::PARAM_INT);
 
     $sql->execute();
+
+    $_SESSION['user'] = $sql->fetch(PDO::FETCH_ASSOC);
+
+    // ett meddelande som skrivs ut i den andra edit.php ifall man har bytt e-post, om SESSION emailMessage isset.
+    $_SESSION['messagePassword'] = "You have succsessfully changed your password";
+
+    if ($newPassword !== $confirmNewPassword) {
+        $_SESSION['messageError'] = "Passwords does not match";
+        header("Location: /../../profile.php");
+        exit;
+    }
 };
 
-// if ($newPassword !== $confirmNewPassword) {
-//     $_SESSION['messages'] = "Passwords does not match";
-//     header("Location: /../../profile.php");
-//     exit;
-// }
 
 
-redirect('/index.php');
+redirect('/profile.php');
