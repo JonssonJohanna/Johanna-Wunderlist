@@ -24,19 +24,6 @@
         </div>
         <button type="submit" class="btn btn-info">Add new task</button>
     </form>
-    <?php
-		// select all tasks if page is visited or refreshed
-		$tasks = ($db, "SELECT * FROM tasks");
-
-		$i = 1; while ($row = mysqli_fetch_array($tasks)) { ?>
-			<tr>
-				<td> <?php echo $i; ?> </td>
-				<td class="task"> <?php echo $row['task']; ?> </td>
-				<td class="delete">
-					<a href="index.php?del_task=<?php echo $row['id'] ?>">x</a>
-				</td>
-			</tr>
-		<?php $i++; } ?>
 
 </article>
 
