@@ -16,6 +16,17 @@
             <button type="submit" class="btn btn-info">Upload image</button>
         </div>
 
+        <!-- alert user that their new image is uploaded and displays the image on both profile.php and image.php -->
+        <?php if (isset($_SESSION['messages'])) :
+            echo $_SESSION['messages'];
+            unset($_SESSION['messages']);
+
+            if (isset($_SESSION['user']['profile_image'])) :
+        ?>
+                <div class="messageImage"><img src="/uploads/<?php echo $_SESSION['user']['profile_image'] ?>"></div>
+
+        <?php endif;
+        endif; ?>
     </form>
     <h2>Edit email</h2>
     <form action="/app/users/update/email.php" method="post">
@@ -25,16 +36,16 @@
             <small class="form-text">Please provide your new email address.</small>
             <button type="submit" class="btn btn-info">Update new email</button>
         </div>
+        <?php if (isset($_SESSION['messageEmail'])) :
+            echo $_SESSION['messageEmail'];
+            unset($_SESSION['messageEmail']);
 
+        endif;
+        ?>
     </form>
 
     <h2>Edit password</h2>
     <form action="/app/users/update/password.php" method="POST">
-        <div class="mb-3">
-            <label for="password">Old password</label>
-            <input class="form-control" type="password" name="password" id="password">
-            <small class="form-text">Please provide your password (passphrase).</small>
-        </div>
 
         <div class="mb-3">
             <label for="newPassword">Write new password</label>
@@ -49,10 +60,24 @@
         </div>
         <button type="submit" class="btn btn-info">Update new password</button>
 
+        <?php if (isset($_SESSION['messagePassword'])) :
+            echo $_SESSION['messagePassword'];
+            unset($_SESSION['messagePassword']);
+
+        endif;
+        ?>
+        <?php
+        if (!isset($_SESSION['messageError'])) {
+            $errormessage = "";
+        } else {
+            $errormessage = $_SESSION['messageError'];
+            unset($_SESSION['messageError']);
+        }
+        ?>
 
     </form>
 
-
 </article>
+
 
 <?php require __DIR__ . '/views/footer.php'; ?>
