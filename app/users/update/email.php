@@ -14,23 +14,13 @@ if (isset($_POST['newEmail'])) {
     $sql = $database->prepare($insertSql);
     $sql->bindParam(':email', $newEmail, PDO::PARAM_STR);
     $sql->bindParam(':id', $_SESSION['user']['id'], PDO::PARAM_INT);
-    // $sql->execute();
-    // $sql->bindParam(':id', $_SESSION['user']['id'], PDO::PARAM_INT);
+
 
     $sql->execute();
+    $_SESSION['user'] = $sql->fetch(PDO::FETCH_ASSOC);
+
+    $_SESSION['messageEmail'] = "You have succsessfully updated your email ";
 };
-//else {
-//     header("Location: index.php");
-// }
 
-// if (isset($_SESSION['email'])) {
-//     $insertSQL = ("UPDATE users SET email = :email WHERE id = :id");
-//     $sql = $database->prepare($insertSQL);
-//     $sql->bindParam(':email', $_SESSION['email'], PDO::PARAM_STR);
 
-//     $sql->execute();
-
-//     $_SESSION['email'] = $sql->fetch(PDO::FETCH_ASSOC);
-// }
-
-redirect('/index.php');
+redirect('/profile.php');
