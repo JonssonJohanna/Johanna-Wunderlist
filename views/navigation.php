@@ -1,9 +1,22 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-danger">
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+
+    <?php
+    if (isset($_SESSION['user']['profile_image'])) :
+    ?>
+        <div class="navImage"><img src="/uploads/<?php echo $_SESSION['user']['profile_image'] ?>"></div>
+
+    <?php endif;
+    ?>
+
     <a class="navbar-brand" href="#"><?php echo $config['title']; ?></a>
 
     <ul class="navbar-nav">
         <li class="nav-item">
             <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/index.php' ? 'active' : ''; ?>" href="/index.php">Home</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/lists.php' ? 'active' : ''; ?>" href="/lists.php">Lists</a>
         </li>
 
         <li class="nav-item">
