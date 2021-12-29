@@ -7,3 +7,21 @@
 body {
   background-color: rgb(205, 214, 214);
 }
+
+html * {
+  font-size: 1em;
+  font-family: sans-serif;
+}
+
+.userImage {
+  width: 300px;
+  height: 300px;
+  border-radius: 100%;
+}
+
+.navImage img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-right: 50%;
+}
