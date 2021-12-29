@@ -20,16 +20,3 @@ if (isset($_POST['title'])) {
 }
 
 redirect('/../../lists.php');
-
-//  Show tasks from database and show in browser
-// if (isset($_SESSION['user']['id'])) {
-//     $getTasks = $_SESSION['user']['id'];
-
-//     $sql = $database->prepare("SELECT *  from title");
-//     $sql->bindParam(':id, $getTasks', PDO::PARAM_INT);
-
-//     $sql->execute();
-
-//     $sql->fetchAll(PDO::FETCH_ASSOC);
-//     $sql->execute();
-// };
