@@ -24,9 +24,16 @@ if (isset($_POST['tasks'], $_POST['deadline'], $_POST['title'])) {
 }
 
 redirect('/../../tasks.php');
-// "UPDATE users SET profile_image = :profile_image WHERE id = :id"
 
-// SELECT column_name(s)
-// FROM table1
-// INNER JOIN table2
-// ON table1.column_name = table2.column_name;
+//  Show tasks from database and show in browser
+// if (isset($_SESSION['user']['id'])) {
+//     $_SESSION['user']['id'];
+
+//     $sql = $database->prepare("SELECT *  from title");
+//     $sql->bindParam(':id, $getTasks', PDO::PARAM_INT);
+
+//     $sql->execute();
+
+//     $sql->fetchAll(PDO::FETCH_ASSOC);
+//     $sql->execute();
+// };
