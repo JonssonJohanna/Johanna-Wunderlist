@@ -6,7 +6,7 @@
     <p>This is the home page.</p>
 
 
-    <?php if (isset($_SESSION['user'])) : ?>
+    <?php if (isset($_SESSION['user']) && $_SESSION['user']) : ?>
         <p>Welcome, <?php echo $_SESSION['user']['name']; ?>, you are logged in!</p>
 
     <?php endif; ?>
