@@ -13,17 +13,18 @@
             <small class="form-text">Please fill in your task name.</small>
         </div>
         <div class="mb-3">
-            <label for="tasks">Tasks</label>
+            <label for="tasks">Description</label>
             <input class="form-control" type="tasks" name="tasks" id="tasks" placeholder="write tasks here" required>
-            <small class="form-text">Please fill in your tasks.</small>
+            <small class="form-text">Describe your task.</small>
         </div>
         <div class="mb-3">
             <label for="deadline">Deadline</label>
             <input class="form-control" type="date" name="deadline" id="deadline" placeholder="write ">
-            <small class="form-text">Please fill in your tasks.</small>
+            <small class="form-text">Please fill in deadline for task.</small>
         </div>
         <button type="submit" class="btn btn-info">Add new task</button>
     </form>
+
 
 </article>
 
