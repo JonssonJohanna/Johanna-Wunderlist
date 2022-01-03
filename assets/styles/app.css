@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+.navbar {
+  background-image: url('/images/navImage.png');
+}
+
 body {
   background-color: rgb(205, 214, 214);
 }
@@ -11,6 +15,13 @@ body {
 html * {
   font-size: 1em;
   font-family: sans-serif;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 2rem;
+  -webkit-text-fill-color: #f2e2ff;
+  -webkit-text-stroke: #d15858 2px;
 }
 
 .userImage {
@@ -24,4 +35,34 @@ html * {
   height: 50px;
   object-fit: cover;
   margin-right: 50%;
+}
+
+table {
+  border-collapse: collapse;
+  width: 50%;
+}
+
+tr {
+  border-bottom: 1px solid;
+}
+
+tr:hover {
+  background-color: rgb(183, 205, 238);
+}
+th,
+td {
+  border: none;
+}
+
+.task {
+  text-align: left;
+}
+.delete {
+  text-align: center;
+}
+.delete {
+  color: rgb(93, 128, 243);
+  background-color: rgb(23, 93, 150);
+  padding: 1px;
+  text-decoration: none;
 }
