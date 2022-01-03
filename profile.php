@@ -64,15 +64,16 @@
             echo $_SESSION['messagePassword'];
             unset($_SESSION['messagePassword']);
 
-        endif;
+
         ?>
         <?php
-        if (!isset($_SESSION['messageError'])) {
-            $errormessage = "";
-        } else {
-            $errormessage = $_SESSION['messageError'];
-            unset($_SESSION['messageError']);
-        }
+            if (!isset($_SESSION['messageError'])) {
+                $errormessage = "";
+            } else {
+                $errormessage = $_SESSION['messageError'];
+                unset($_SESSION['messageError']);
+            }
+        endif;
         ?>
 
     </form>
