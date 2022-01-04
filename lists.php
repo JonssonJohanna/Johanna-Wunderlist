@@ -2,9 +2,8 @@
 <?php require __DIR__ . '/views/header.php'; ?>
 
 
-<article class="displayLists">
+<article>
 
-    </form>
     <h2>Create Lists</h2>
     <form action="/app/users/todo/lists.php" method="post">
         <div class="mb-3 listForm">
@@ -21,29 +20,25 @@
             </tr>
         </thead>
 
-        <thead>
-            <tr>
+        <tbody>
+            <tr class="displayLists">
                 <?php
                 $lists = addLists($database);
                 foreach ($lists as $list) :
 
                 ?>
                     <td>
-                        <ul>
-                            <li><?= $list['title']; ?></li>
-                        </ul>
+
+                        <?= $list['title']; ?>
+
                     </td>
 
                     <td><button class="taskButton">Create task</button></td>
                 <?php endforeach; ?>
 
             </tr>
-        </thead>
+        </tbody>
     </table>
-    </table>
-
-
-    </form>
     <br>
     <form class="hiddenForm" action="/app/users/todo/tasks.php" method="post">
         <div class="mb-3">
