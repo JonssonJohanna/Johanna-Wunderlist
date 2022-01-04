@@ -8,7 +8,7 @@ require __DIR__ . '/../../autoload.php';
 if (isset($_FILES['profile_image'])) {
     //saving image in filesystem
     $avatar = trim(filter_var($_FILES['profile_image']['name'], FILTER_SANITIZE_STRING));
-    $destination =  __DIR__ . '/../../uploads/' . $avatar;
+    $destination =  __DIR__ . '/../../../uploads/' . $avatar;
     $avatarTemp = $_FILES['profile_image']['tmp_name'];
     move_uploaded_file($avatarTemp, $destination);
     $alert = 'The file is uploaded';
