@@ -10,6 +10,7 @@
 
 body {
   background-color: #f2e2ff;
+  width: 100vw;
 }
 
 html * {
@@ -38,8 +39,7 @@ html * {
 }
 
 table {
-  border-collapse: collapse;
-  width: 50%;
+  width: 100%;
 }
 
 tr {
@@ -57,7 +57,7 @@ td {
 .task {
   text-align: left;
 }
-.check {
+.delete {
   text-align: center;
   color: rgb(93, 128, 243);
   background-color: rgb(23, 93, 150);
@@ -67,4 +67,22 @@ td {
 
 .hiddenForm {
   display: none;
+}
+
+.on {
+  display: flex;
+}
+
+.hiddenTable {
+  display: none;
+}
+
+.taskButton {
+  color: rgb(93, 128, 243);
+}
+
+.displayLists {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
