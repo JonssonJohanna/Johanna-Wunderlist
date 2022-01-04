@@ -26,7 +26,7 @@ if (isset($_POST['tasks'], $_POST['deadline'], $_POST['title'])) {
     $_SESSION['user'] = $sql->fetch(PDO::FETCH_ASSOC);
 }
 
-// redirect('/../../tasks.php');
+redirect('/../../lists.php');
 
 // connects list.id with tasks.list_id
 
