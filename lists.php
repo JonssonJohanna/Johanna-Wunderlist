@@ -1,7 +1,8 @@
 <?php require __DIR__ . '/app/autoload.php'; ?>
 <?php require __DIR__ . '/views/header.php'; ?>
 
-<article>
+
+<article class="displayLists">
 
     </form>
     <h2>Create Lists</h2>
@@ -11,40 +12,36 @@
             <input class="form-control" type="name" name="title" id="title" placeholder="write list name here" required>
         </div>
         <button type="submit" name="submit" class="btn btn-info">Create list</button>
-        <br>
-        <table>
-            <thead>
-                <tr>
-                    <th>List</th>
-                    <th>Task</th>
-                    <th>Description</th>
-                    <th>Date</th>
-                    <th>✔️</th>
-                </tr>
-            </thead>
-            <thead>
-                <tr>
-                    <td>List</td>
-                    <td class="task">Task</td>
-                    <td class="description">Describe task here</td>
-                    <td><input type="date" name="deadline"></td>
-                    <td class="check">
-                        <a href="#">X</a>
-                    </td>
-                </tr>
-            </thead>
-        </table>
-
     </form>
-    <?php
+    <table>
+        <thead>
+            <tr>
+                <th>List</th>
+                <th>Add task</th>
+            </tr>
+        </thead>
 
-    foreach ($title as $list);
-    $list['title']; ?>
+        <thead>
+            <tr>
+                <?php
+                $lists = addLists($database);
+                foreach ($lists as $list) :
 
-    <div>
-        <p>
-        <h2 </p>
-    </div>
+                ?>
+                    <td>
+                        <ul>
+                            <li><?= $list['title']; ?></li>
+                        </ul>
+                    </td>
+
+                    <td><button class="taskButton">Create task</button></td>
+                <?php endforeach; ?>
+
+            </tr>
+        </thead>
+    </table>
+    </table>
+
 
     </form>
     <br>
@@ -65,6 +62,31 @@
             <small class="form-text">Please fill in deadline for task.</small>
         </div>
         <button class="toogleButton" type="submit" class="btn btn-info">Add new task</button>
+        <table class="hiddenTable">
+            <thead>
+                <tr>
+
+                    <th>Task</th>
+                    <th>Description</th>
+                    <th>Date</th>
+                    <th>✔️</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <thead>
+                <tr>
+                    <td class="task">Task</td>
+                    <td class="description">Describe task here</td>
+                    <td><input type="date" name="deadline"></td>
+                    <td><input type="checkbox" class="check">
+                    <td>...</td>
+                    <td class="delete">
+                        <a href="#">X</a>
+                    </td>
+                </tr>
+            </thead>
+        </table>
     </form>
 
 
