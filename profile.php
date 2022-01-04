@@ -53,6 +53,12 @@
             <small class="form-text">Write your new password (passphrase).</small>
 
         </div>
+        <?php
+        if (isset($_SESSION['messageError'])) :
+            echo $_SESSION['messageError'];
+            unset($_SESSION['messageError']);
+
+        endif; ?>
         <div class="mb-3">
             <label for="confirmNewPassword">Confirm new password</label>
             <input class="form-control" type="password" name="confirmNewPassword" id="confirmNewPassword">
@@ -64,15 +70,9 @@
             echo $_SESSION['messagePassword'];
             unset($_SESSION['messagePassword']);
 
+            if (isset($_SESSION['user']['messagePassword'])) :
 
-        ?>
-        <?php
-            if (!isset($_SESSION['messageError'])) {
-                $errormessage = "";
-            } else {
-                $errormessage = $_SESSION['messageError'];
-                unset($_SESSION['messageError']);
-            }
+            endif;
         endif;
         ?>
 
