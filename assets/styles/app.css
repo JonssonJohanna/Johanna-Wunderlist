@@ -57,12 +57,14 @@ td {
 .task {
   text-align: left;
 }
-.delete {
+.check {
   text-align: center;
-}
-.delete {
   color: rgb(93, 128, 243);
   background-color: rgb(23, 93, 150);
   padding: 1px;
   text-decoration: none;
+}
+
+.hiddenForm {
+  display: none;
 }
