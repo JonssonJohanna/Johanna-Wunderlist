@@ -16,17 +16,33 @@
     $lists = addLists($database);
     foreach ($lists as $list) : ?>
 
-        <div class="table">
-            <div> <?= $list['title']; ?></div>
+        <div>
+            <table class="table">
 
-            <?php $tasks = collectTasks($database, $list['id']);  ?>
-            <?php foreach ($tasks as $taskItem) : ?>
-                <div class="tableColumn"><?= $taskItem['title']; ?></div>
-                <div class="tableColumn"><?= $taskItem['description']; ?></div>
-                <div class="tableColumn"><?= $taskItem['deadline']; ?></div>
+                <tr>
+                    <th class="column">List</th>
+                    <th class="column">Title</th>
+                    <th class="column">Description</th>
+                    <th class="column">Date</th>
+                    <th class="column">Edit</th>
+                    <th class="column">Delete</th>
+                </tr>
+                <!-- <div> <?= $list['title']; ?></div> -->
 
-            <?php endforeach; ?>
-
+                <?php $tasks = collectTasks($database, $list['id']);  ?>
+                <?php foreach ($tasks as $taskItem) : ?>
+                    <tr>
+                        <td class="list"><?= $list['title']; ?></td>
+                        <td><?= $taskItem['title']; ?></td>
+                        <td><?= $taskItem['description']; ?></td>
+                        <td><?= $taskItem['deadline']; ?></td>
+                        <td input="checkbox"></td>
+                        <td class="delete">
+                            <a href="#">X</a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </table>
             <details>
                 <summary>Press for task form</summary>
                 <form action="/app/tasks/create.php" method="post">

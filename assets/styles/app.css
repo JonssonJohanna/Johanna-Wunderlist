@@ -40,22 +40,24 @@ html * {
 
 table {
   width: 50%;
+  margin: 1rem auto;
+  border-collapse: collapse;
 }
 
-tr {
+tr,
+td {
   border-bottom: 1px solid;
 }
 
 tr:hover {
-  background-color: rgb(183, 205, 238);
+  background-color: rgb(248, 166, 207);
 }
+
 th,
 td {
   border: none;
-}
-
-.task {
-  text-align: left;
+  height: 40px;
+  padding: 10px;
 }
 .delete {
   text-align: center;
@@ -65,7 +67,12 @@ td {
   text-decoration: none;
 }
 
-.hiddenForm {
+.list {
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+/* .hiddenForm {
   display: none;
 }
 
@@ -78,7 +85,7 @@ td {
 }
 .tableOn {
   display: flex;
-}
+} */
 
 button {
   color: rgb(93, 128, 243);
