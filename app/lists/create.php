@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-require __DIR__ . '/../../autoload.php';
+require __DIR__ . '/../autoload.php';
 
 
 //connects user tasks with database
@@ -19,4 +19,4 @@ if (isset($_POST['title'])) {
     $_SESSION['user'][] = $sql->fetch(PDO::FETCH_ASSOC);
 }
 
-redirect('/../../lists.php');
+redirect('/../../create.php');
