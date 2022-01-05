@@ -39,7 +39,7 @@ html * {
 }
 
 table {
-  width: 100%;
+  width: 50%;
 }
 
 tr {
@@ -76,8 +76,11 @@ td {
 .hiddenTable {
   display: none;
 }
+.tableOn {
+  display: flex;
+}
 
-.taskButton {
+button {
   color: rgb(93, 128, 243);
 }
 
