@@ -10,7 +10,7 @@
             <label for="title">List name</label>
             <input class="form-control" type="name" name="title" id="title" placeholder="write list name here" required>
         </div>
-        <button class="listsButton" type="submit" name="submit" class="btn btn-info">Create list</button>
+        <button type="submit" name="submit">Create list</button>
     </form>
     <?php
     $lists = addLists($database);
@@ -20,14 +20,14 @@
             <table class="table">
 
                 <tr>
-                    <th class="column">List</th>
+                    <th class="column">Lista <?= $list['title']; ?></th>
                     <th class="column">Title</th>
                     <th class="column">Description</th>
                     <th class="column">Date</th>
                     <th class="column">Edit</th>
                     <th class="column">Delete</th>
                 </tr>
-                <!-- <div> <?= $list['title']; ?></div> -->
+
 
                 <?php $tasks = collectTasks($database, $list['id']);  ?>
                 <?php foreach ($tasks as $taskItem) : ?>
@@ -63,7 +63,7 @@
                     </div>
 
                     <input type="hidden" name="list_id" value="<?= $list['id']; ?>">
-                    <button class="tasksButton" type="submit" class="btn btn-warning">Add new task</button>
+                    <button type="submit">Add new task</button>
                 </form>
             </details>
         </div>

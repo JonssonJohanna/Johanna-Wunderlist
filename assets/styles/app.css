@@ -1,4 +1,9 @@
-/* In this file you can add your custom styles. */
+@font-face {
+  font-family: 'Poppins-Regular';
+  src: local('Poppins-Regular'),
+    url('/font/Poppins-Regular.woff2') format('woff2'),
+    url('/font/Poppins-Regular.woff') format('woff');
+}
 
 * {
   box-sizing: border-box;
@@ -6,23 +11,24 @@
 
 .navbar {
   background-image: url('/images/navImage.png');
+  width: 100%;
 }
 
 body {
-  background-color: #f2e2ff;
+  background-color: #9da993;
   width: 100vw;
 }
 
 html * {
   font-size: 1em;
-  font-family: sans-serif;
+  font-family: Poppins-Regular;
+  color: #353621;
 }
 
 .navbar-brand {
   font-weight: bold;
-  font-size: 2rem;
-  -webkit-text-fill-color: #f2e2ff;
-  -webkit-text-stroke: #d15858 2px;
+  font-size: 2.5rem;
+  color: #353621;
 }
 
 .userImage {
@@ -39,18 +45,17 @@ html * {
 }
 
 table {
-  width: 50%;
+  width: 30%;
   margin: 1rem auto;
-  border-collapse: collapse;
 }
 
 tr,
 td {
-  border-bottom: 1px solid;
+  border-top: 1px solid;
 }
 
 tr:hover {
-  background-color: rgb(248, 166, 207);
+  background-color: #f2e2ff;
 }
 
 th,
@@ -58,11 +63,12 @@ td {
   border: none;
   height: 40px;
   padding: 10px;
+  width: 40%;
 }
 .delete {
   text-align: center;
-  color: rgb(93, 128, 243);
-  background-color: rgb(23, 93, 150);
+  -webkit-text-fill-color: #9da993;
+  background-color: #353621;
   padding: 1px;
   text-decoration: none;
 }
@@ -88,11 +94,42 @@ td {
 } */
 
 button {
-  color: rgb(93, 128, 243);
+  color: #9da993;
+  background-color: #353621;
+  height: 3rem;
+  width: 6rem;
+  border: none;
+}
+
+button:hover {
+  box-shadow: #353621 2px -2px 2px 2px;
 }
 
 .displayLists {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+@media only screen and (min-width: 1024px) {
+  table {
+    width: 50%;
+    margin: 1rem auto;
+  }
+
+  tr,
+  td {
+    border-top: 1px solid;
+  }
+
+  tr:hover {
+    background-color: #f2e2ff;
+  }
+
+  th,
+  td {
+    border: none;
+    height: 40px;
+    padding: 10px;
+  }
 }

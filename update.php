@@ -13,7 +13,7 @@
             <label for="profile_image">Upload optional image here</label>
             <input type="file" name="profile_image" id="profile_image" accept=".jpg, .png" required>
 
-            <button type="submit" class="btn btn-info">Upload image</button>
+            <button type="submit">Upload image</button>
         </div>
 
         <!-- alert user that their new image is uploaded and displays the image on both profile.php and image.php -->
@@ -34,7 +34,7 @@
             <label for="newEmail">Email</label>
             <input class="form-control" type="email" name="newEmail" id="newEmail" placeholder="enter your new email" required>
             <small class="form-text">Please provide your new email address.</small>
-            <button type="submit" class="btn btn-info">Update new email</button>
+            <button type="submit">Update new email</button>
         </div>
         <?php if (isset($_SESSION['messageEmail'])) :
             echo $_SESSION['messageEmail'];
@@ -64,7 +64,7 @@
             <input class="form-control" type="password" name="confirmNewPassword" id="confirmNewPassword">
             <small class="form-text">Confirm your new password (passphrase).</small>
         </div>
-        <button type="submit" class="btn btn-info">Update new password</button>
+        <button type="submit">Update new password</button>
 
         <?php if (isset($_SESSION['messagePassword'])) :
             echo $_SESSION['messagePassword'];

@@ -16,12 +16,12 @@
             <input class="form-control" type="password" name="password" id="password" required>
             <small class="form-text">Please provide the your password (passphrase).</small>
         </div>
-        <button type="submit" class="btn btn-info">Login</button>
+        <button type="submit">Login</button>
 
     </form>
 
     <form method="GET" action="signUp.php">
-        <button type="submit" class="btn btn-info">Sign up</button>
+        <button type="submit">Sign up</button>
     </form>
     <!-- <button onclick="window.location.href='signup.php'">Sign up</button> -->
 
