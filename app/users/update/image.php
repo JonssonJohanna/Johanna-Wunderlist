@@ -35,4 +35,4 @@ if (isset($_FILES['profile_image'])) {
     $_SESSION['messages'] = "Profile image is sucessfully uploaded";
 };
 
-redirect('/profile.php');
+redirect('/update.php');

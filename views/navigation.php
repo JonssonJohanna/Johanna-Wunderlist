@@ -16,21 +16,15 @@
         </li>
 
 
-
-        <li class="nav-item">
-            <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/tasks.php' ? 'active' : ''; ?>" href="/tasks.php">Create tasks</a>
-        </li>
-
-
         <li class="nav-item">
             <?php if (isset($_SESSION['user'])) : ?>
                 <a class="nav-link" href="/app/users/logout.php">Logout</a>
 
         <li class="nav-item">
-            <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/login.php' ? 'active' : ''; ?>" href="/profile.php">Edit profile</a>
+            <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/login.php' ? 'active' : ''; ?>" href="/update.php">Edit profile</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/lists.php' ? 'active' : ''; ?>" href="/lists.php">Lists</a>
+            <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/lists.php' ? 'active' : ''; ?>" href="/create.php">Lists</a>
         </li>
     <?php else : ?>
         <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/login.php' ? 'active' : ''; ?>" href="/login.php">Login</a>

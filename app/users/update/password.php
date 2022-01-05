@@ -12,7 +12,7 @@ if (isset($_POST['newPassword'])) {
 
     if ($_POST['newPassword'] !== $_POST['confirmNewPassword']) {
         $_SESSION['messageError'] = "Passwords do not match";
-        redirect("/profile.php");
+        redirect("/update.php");
     }
 
     $insertSql = ("UPDATE users SET password = :password WHERE id = :id");
@@ -28,9 +28,9 @@ if (isset($_POST['newPassword'])) {
 
     $_SESSION['messagePassword'] = "You have succsessfully changed your password";
 
-    // $_SESSION['user'] = $sql->fetch(PDO::FETCH_ASSOC);
+    $_SESSION['user'][] = $sql->fetch(PDO::FETCH_ASSOC);
 }
 
 
 
-redirect('/profile.php');
+redirect('/update.php');

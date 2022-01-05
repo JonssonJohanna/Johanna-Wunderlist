@@ -23,4 +23,4 @@ if (isset($_POST['newEmail'])) {
 };
 
 
-redirect('/profile.php');
+redirect('/update.php');
