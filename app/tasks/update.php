@@ -24,4 +24,17 @@ if (isset($_POST['tasks'], $_POST['deadline'], $_POST['title'])) {
     $_SESSION['user'][] = $sql->fetch(PDO::FETCH_ASSOC);
 }
 
+if (isset($_POST['checkBoxes'], $_POST['id'])) {
+    $completed = $_POST['checkBoxes'];
+    die(var_dump($completed));
+    $id = $_POST['id'];
+    $insertSQL = ("UPDATE tasks SET completed = :completed WHERE id = :id");
+    $sql = $database->prepare($insertSQL);
+    $sql->bindParam(':completed', $completed, PDO::PARAM_BOOL);
+    $sql->bindParam(':id', $id, PDO::PARAM_INT);
+    $sql->execute();
+}
+
+
+
 redirect('/../../create.php');

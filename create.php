@@ -34,14 +34,20 @@
                 <?php $tasks = collectTasks($database, $list['id']);  ?>
                 <?php foreach ($tasks as $taskItem) : ?>
                     <tr>
-                        <td> <input type="checkbox" id="completed" name="completed" value="completed">
-                            <label for="completed"></label>
+                        <!-- Form for submiting task as completed -->
+                        <td>
+                            <form action="/app/tasks/update.php" method="POST">
+                                <input type="hidden" name="id" value="<?= $taskItem['id'] ?>" />
+                                <p><input type="checkbox" name="checkBoxes" value=""></p>
+                                <button type="submit" name="saveCheckBox">Completed task</button>
+                            </form>
                         </td>
                         <td class="list"><?= $list['title']; ?></td>
                         <td><?= $taskItem['title']; ?></td>
                         <td><?= $taskItem['description']; ?></td>
                         <td><?= $taskItem['deadline']; ?></td>
                         <td>
+                            <!-- Connects task with its id -->
                             <div>
                                 <form action="/updateTasks.php" method="POST">
                                     <input type="hidden" name="id" value="<?= $taskItem['id'] ?>" />
@@ -50,7 +56,12 @@
                             </div>
                         </td>
                         <td class="delete">
-                            <a href="#">X</a>
+                            <div>
+                                <form action="/app/tasks/delete.php" method="POST">
+                                    <input type="hidden" name="id" value="<?= $taskItem['id'] ?>" />
+                                    <button type="submit"></button>
+                                </form>
+                            </div>
                         </td>
                     </tr>
                 <?php endforeach; ?>
