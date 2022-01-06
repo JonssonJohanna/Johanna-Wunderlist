@@ -1,7 +1,7 @@
-const listsButton = document.querySelector('.listsButton');
-const taskButtons = document.querySelectorAll('.tasksButton');
-const hiddenForm = document.querySelector('.hiddenForm');
-const hiddenTable = document.querySelector('.hiddenTable');
+// const listsButton = document.querySelector('.listsButton');
+// const taskButtons = document.querySelectorAll('.tasksButton');
+// const hiddenForm = document.querySelector('.hiddenForm');
+// const hiddenTable = document.querySelector('.hiddenTable');
 
 // taskButtons.forEach((taskButton) => {
 //   taskButton.addEventListener('click', () => {
@@ -14,3 +14,5 @@ const hiddenTable = document.querySelector('.hiddenTable');
 //     hiddenTable.classList.toggle('tableOn');
 //   });
 // });
+
+// function lists tasks with deadline in ASC/DESC

@@ -23,14 +23,18 @@ if (isset($_POST['tasks'], $_POST['deadline'], $_POST['title'])) {
 
     $_SESSION['user'][] = $sql->fetch(PDO::FETCH_ASSOC);
 }
-
+// Checks if checkbox form is checked and returns 0 for false and 1 for true
+if (isset($_POST['checkBoxes'])) {
+    $taskBox = 1;
+} else {
+    $taskBox = 0;
+}
 if (isset($_POST['checkBoxes'], $_POST['id'])) {
     $completed = $_POST['checkBoxes'];
-    die(var_dump($completed));
     $id = $_POST['id'];
     $insertSQL = ("UPDATE tasks SET completed = :completed WHERE id = :id");
     $sql = $database->prepare($insertSQL);
-    $sql->bindParam(':completed', $completed, PDO::PARAM_BOOL);
+    $sql->bindParam(':completed', $taskBox, PDO::PARAM_BOOL);
     $sql->bindParam(':id', $id, PDO::PARAM_INT);
     $sql->execute();
 }
