@@ -30,18 +30,3 @@ if (isset($_POST['tasks'], $_POST['deadline'], $_POST['title'])) {
 }
 
 redirect('/../../create.php');
-
-// connects list.id with tasks.list_id
-
-// if (isset($_POST['title'])) {
-//     $idList = trim($_POST['title']);
-
-//     $sql = $database->prepare("INSERT INTO lists (title, user_id) VALUES (:list, :user_id)");
-
-//     $sql->bindParam(':', $idList, PDO::PARAM_STR);
-//     $sql->bindParam(':list_id', $taskId, PDO::PARAM_STR);
-
-//     $sql->execute();
-
-//     $_SESSION['user'] = $sql->fetch(PDO::FETCH_ASSOC);
-// }
