@@ -40,6 +40,27 @@ if (isset($_POST['checkBoxes'], $_POST['id'])) {
 }
 
 
+// An attempt to get the checkboxes to work but couldnt get it to work
+// $taskBox = isset($_POST['checkBoxes']);
+
+// if (isset($_POST['id'], $_POST['checkBoxes'])) {
+//     $id = $_POST['id'];
+//     $taskBox = $_POST['checkBoxes'];
+
+//     if ($taskBox) {
+//         echo "The task $id is completed.";
+//     } else {
+//         echo "The task $id is not completed.";
+//     }
+
+//     $insertSQL = ("UPDATE tasks SET completed = :completed WHERE id = :id");
+//     $sql = $database->prepare($insertSQL);
+//     $sql->bindParam(':completed', $taskBox, PDO::PARAM_BOOL);
+//     $sql->bindParam(':id', $id, PDO::PARAM_INT);
+//     $sql->execute();
+// }
+
+
 
 
 redirect('/../../create.php');
