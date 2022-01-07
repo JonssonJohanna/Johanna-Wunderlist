@@ -31,14 +31,13 @@ function collectTasks(PDO $database, int $listId): array
     return $tasks;
 }
 
-// functions that connects tasks with list.id
-// function fetchTasks(PDO $database): array
-// {
-//     $sql = $database->prepare('SELECT * tasks, lists.title FROM tasks INNER JOIN lists ON tasks.list_id = lists.id WHERE lists.user_id = :id AND list_id = :list_id');
-//     $sql->bindParam(':id', $_SESSION['user']['id'], PDO::PARAM_INT);
-//     $sql->bindParam(':list_id', $listId, PDO::PARAM_INT);
-//     $sql->execute();
+// functions that connects tasks with lists to display all tasks that should be completed today
+function fetchTasksToday(PDO $database, $deadline): array
+{
+    $sql = $database->prepare('SELECT * FROM tasks WHERE deadline = :deadline AND id = :list_id');
+    $sql->bindParam(':id', $deadline, PDO::PARAM_INT);
+    $sql->execute();
 
-//     $fetchAllTasks = $sql->fetchAll(PDO::FETCH_ASSOC);
-//     return $fetchAllTasks;
-// }
+    $tasksToday = $sql->fetchAll(PDO::FETCH_ASSOC);
+    return $tasksToday;
+}

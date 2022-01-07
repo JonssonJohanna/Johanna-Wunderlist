@@ -14,5 +14,17 @@
         <img class="userImage" src="/uploads/<?php echo $_SESSION['user']['profile_image'] ?>">
     <?php endif; ?>
 </article>
+<article>
+    <?php
+    $lists = addLists($database);
+    foreach ($lists as $list) : ?>
+        <?php $taskDeadline = fetchTasksToday($database, $list['id']);  ?>
+        <?php die(var_dump($taskDeadline)); ?>
+
+
+        <?php foreach ($tasks as $taskItem) : ?>
+        <?php endforeach; ?>
+    <?php endforeach; ?>
+</article>
 
 <?php require __DIR__ . '/views/footer.php'; ?>
