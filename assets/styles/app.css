@@ -46,6 +46,18 @@ html * {
 .tableContainer {
   width: 100%;
 }
+
+.listTitle {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+.inputImage {
+  height: 20px;
+  height: 30px;
+}
 table {
   width: 30%;
   margin: 1rem auto;

@@ -11,9 +11,6 @@ if (isset($_POST['id'])) {
     $insertSQL = $database->prepare('DELETE FROM tasks WHERE id = :id');
     $insertSQL->bindParam(':id', $taskID, PDO::PARAM_INT);
     $insertSQL->execute();
-
-    $insertSQL = $database->prepare('DELETE FROM tasks WHERE list_id = :id');
-    $insertSQL->bindParam(':id', $taskID, PDO::PARAM_INT);
 }
 
 redirect('/../../create.php');

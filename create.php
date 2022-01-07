@@ -17,20 +17,27 @@
     <?php
     $lists = addLists($database);
     foreach ($lists as $list) : ?>
+
         <div class="tableContainer">
+
+            <div class="listTitle"> <?= $list['title']; ?>
+                <div>
+                    <form action="/updateLists.php" method="POST">
+                        <input type="hidden" name="id" value="<?= $list['id'] ?>" />
+                        <input class="inputImage" type="image" src="/images/more.png">
+
+                    </form>
+                </div>
+                <div>
+                    <form action="/app/lists/delete.php" method="POST">
+                        <input type="hidden" name="id" value="<?= $list['id'] ?>" />
+                        <input class="inputImage" type="image" src="/images/delete.png">
+
+                    </form>
+                </div>
+            </div>
             <table class="table">
-
-
                 <tr class="columnName">
-                    <th class="column"> <?= $list['title']; ?>
-                        <div>
-                            <form action="/updateLists.php" method="POST">
-                                <input type="hidden" name="id" value="<?= $list['id'] ?>" />
-                                <input type="image" src="/images/editPen.png">
-
-                            </form>
-                        </div>
-                    </th>
                     <th class="column">Completed</th>
                     <th class="column">Title</th>
                     <th class="column">Description</th>
