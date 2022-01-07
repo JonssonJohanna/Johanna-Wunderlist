@@ -50,9 +50,10 @@
                 <?php $tasks = collectTasks($database, $list['id']);  ?>
                 <?php foreach ($tasks as $taskItem) : ?>
                     <tr>
-                        <td class="list"><?= $list['title']; ?></td>
                         <!-- Form for submiting task as completed -->
                         <td>
+
+
                             <form action="/app/tasks/update.php" method="POST" name="taskBox<?= $taskItem['id'] ?>">
                                 <input type="hidden" name="id" value="<?= $taskItem['id'] ?>" />
                                 <input type="checkbox" name="checkBoxes" onclick="document.forms.taskBox<?= $taskItem['id'] ?>.submit();">
@@ -61,18 +62,36 @@
                                 } elseif ($taskItem['completed'] != 1) {
                                     echo "Not done";
                                 } ?>
-                                <!-- <button type="submit" name="saveCheckBox">Completed task</button> -->
+
                             </form>
+                            <!-- <form action="/app/tasks/update.php" method="POST">
+                                <input type="hidden" name="id" value="" <?= $taskItem['id'] ?>>
+
+                                <input type="checkbox" name="checkBoxes" id="checkBoxes" <?= $taskItem['completed'] ? 'checked' : '' ?>>
+
+                                <label for="checkBoxes">
+
+                                </label>
+
+                                <div>
+                                    <button type="submit">Submit</button>
+                                </div>
+                            </form> -->
+
+
+
+
                         </td>
                         <td><?= $taskItem['title']; ?></td>
                         <td><?= $taskItem['description']; ?></td>
                         <td><?= $taskItem['deadline']; ?></td>
+                        <!-- Hidden form for edit tasks and onnects task with its id  -->
                         <td>
-                            <!-- Connects task with its id -->
                             <div>
                                 <form action="/updateTasks.php" method="POST">
                                     <input type="hidden" name="id" value="<?= $taskItem['id'] ?>" />
-                                    <button type="submit"></button>
+                                    <input class="inputImage" type="image" src="/images/more.png">
+
                                 </form>
                             </div>
                         </td>
@@ -80,7 +99,8 @@
                             <div>
                                 <form action="/app/tasks/delete.php" method="POST">
                                     <input type="hidden" name="id" value="<?= $taskItem['id'] ?>" />
-                                    <button type="submit"></button>
+                                    <input class="inputImage" type="image" src="/images/delete.png">
+
                                 </form>
                             </div>
                         </td>
