@@ -43,10 +43,14 @@ html * {
   object-fit: cover;
   margin-right: 50%;
 }
-
+.tableContainer {
+  width: 100%;
+}
 table {
   width: 30%;
   margin: 1rem auto;
+}
+/*.columnName {
 }
 
 tr,
@@ -63,7 +67,6 @@ td {
   border: none;
   height: 40px;
   padding: 10px;
-  width: 40%;
 }
 .delete {
   text-align: center;
@@ -76,21 +79,6 @@ td {
 .list {
   text-transform: capitalize;
   font-weight: bold;
-}
-
-/* .hiddenForm {
-  display: none;
-}
-
-.on {
-  display: flex;
-}
-
-.hiddenTable {
-  display: none;
-}
-.tableOn {
-  display: flex;
 } */
 
 button {
@@ -106,31 +94,8 @@ button:hover {
   box-shadow: #353621 2px -2px 2px 2px;
 }
 
-.displayLists {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
 @media only screen and (min-width: 1024px) {
-  table {
-    width: 50%;
-    margin: 1rem auto;
-  }
-
-  tr,
-  td {
-    border-top: 1px solid;
-  }
-
-  tr:hover {
-    background-color: #f2e2ff;
-  }
-
-  th,
-  td {
-    border: none;
-    height: 40px;
-    padding: 10px;
+  .tableContainer {
+    background-color: honeydew;
   }
 }
