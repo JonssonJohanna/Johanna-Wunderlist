@@ -12,37 +12,51 @@
         </div>
         <button type="submit" name="submit">Create list</button>
     </form>
+
     <!-- Functions that loops out list titles -->
     <?php
     $lists = addLists($database);
     foreach ($lists as $list) : ?>
-        <div>
+        <div class="tableContainer">
             <table class="table">
 
 
-                <tr>
+                <tr class="columnName">
+                    <th class="column"> <?= $list['title']; ?>
+                        <div>
+                            <form action="/updateLists.php" method="POST">
+                                <input type="hidden" name="id" value="<?= $list['id'] ?>" />
+                                <input type="image" src="/images/editPen.png">
+
+                            </form>
+                        </div>
+                    </th>
                     <th class="column">Completed</th>
-                    <th class="column">Lista <?= $list['title']; ?></th>
                     <th class="column">Title</th>
                     <th class="column">Description</th>
                     <th class="column">Date</th>
                     <th class="column">Edit</th>
-                    <th class="column">Delete</th>
+                    <th class="column">Delete task</th>
                 </tr>
 
                 <!-- Functions that loops out tasks -->
                 <?php $tasks = collectTasks($database, $list['id']);  ?>
                 <?php foreach ($tasks as $taskItem) : ?>
                     <tr>
+                        <td class="list"><?= $list['title']; ?></td>
                         <!-- Form for submiting task as completed -->
                         <td>
-                            <form action="/app/tasks/update.php" method="POST">
+                            <form action="/app/tasks/update.php" method="POST" name="taskBox<?= $taskItem['id'] ?>">
                                 <input type="hidden" name="id" value="<?= $taskItem['id'] ?>" />
-                                <p><input type="checkbox" name="checkBoxes" value=""></p>
-                                <button type="submit" name="saveCheckBox">Completed task</button>
+                                <input type="checkbox" name="checkBoxes" onclick="document.forms.taskBox<?= $taskItem['id'] ?>.submit();">
+                                <?php if ($taskItem['completed'] == 1) {
+                                    echo "Done";
+                                } elseif ($taskItem['completed'] != 1) {
+                                    echo "Not done";
+                                } ?>
+                                <!-- <button type="submit" name="saveCheckBox">Completed task</button> -->
                             </form>
                         </td>
-                        <td class="list"><?= $list['title']; ?></td>
                         <td><?= $taskItem['title']; ?></td>
                         <td><?= $taskItem['description']; ?></td>
                         <td><?= $taskItem['deadline']; ?></td>
