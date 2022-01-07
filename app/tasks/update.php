@@ -41,4 +41,5 @@ if (isset($_POST['checkBoxes'], $_POST['id'])) {
 
 
 
+
 redirect('/../../create.php');
