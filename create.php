@@ -36,22 +36,22 @@
                     </form>
                 </div>
             </div>
-            <table class="table">
-                <tr class="columnName">
-                    <th class="column">Completed</th>
-                    <th class="column">Title</th>
-                    <th class="column">Description</th>
-                    <th class="column">Date</th>
-                    <th class="column">Edit</th>
-                    <th class="column">Delete task</th>
-                </tr>
+            <div class="table">
+                <div class="columnName">
+                    <div class="column">Completed</div>
+                    <div class="column">Title</div>
+                    <div class="column">Description</div>
+                    <div class="column">Date</div>
+                    <div class="column">Edit</div>
+                    <div class="column">Delete task</div>
+                </div>
 
                 <!-- Functions that loops out tasks -->
                 <?php $tasks = collectTasks($database, $list['id']);  ?>
                 <?php foreach ($tasks as $taskItem) : ?>
-                    <tr>
+                    <div class="rowName">
                         <!-- Form for submiting task as completed -->
-                        <td>
+                        <div class="row">
 
 
                             <form action="/app/tasks/update.php" method="POST" name="taskBox<?= $taskItem['id'] ?>">
@@ -81,12 +81,12 @@
 
 
 
-                        </td>
-                        <td><?= $taskItem['title']; ?></td>
-                        <td><?= $taskItem['description']; ?></td>
-                        <td><?= $taskItem['deadline']; ?></td>
+                        </div>
+                        <div class="row"><?= $taskItem['title']; ?></div>
+                        <div class="row"><?= $taskItem['description']; ?></div>
+                        <div class="row"><?= $taskItem['deadline']; ?></div>
                         <!-- Hidden form for edit tasks and onnects task with its id  -->
-                        <td>
+                        <div class="row">
                             <div>
                                 <form action="/updateTasks.php" method="POST">
                                     <input type="hidden" name="id" value="<?= $taskItem['id'] ?>" />
@@ -94,8 +94,8 @@
 
                                 </form>
                             </div>
-                        </td>
-                        <td class="delete">
+                        </div class="row">
+                        <div class="row" class="delete">
                             <div>
                                 <form action="/app/tasks/delete.php" method="POST">
                                     <input type="hidden" name="id" value="<?= $taskItem['id'] ?>" />
@@ -103,10 +103,10 @@
 
                                 </form>
                             </div>
-                        </td>
-                    </tr>
+                        </div>
+                    </div>
                 <?php endforeach; ?>
-            </table>
+            </div>
 
             <!-- Details and summary hides form -->
             <details>
