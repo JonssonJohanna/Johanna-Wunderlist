@@ -59,7 +59,15 @@ html * {
   height: 30px;
 }
 table {
-  margin: 1rem auto;
+  margin: 1rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+.listTitle {
+  margin: 1rem;
   display: flex;
   flex-direction: row;
   gap: 1rem;
@@ -67,7 +75,7 @@ table {
   margin-bottom: 0;
 }
 .columnName {
-  margin: 1rem auto;
+  margin: 1rem;
   display: flex;
   flex-direction: row;
   gap: 1rem;
@@ -75,7 +83,7 @@ table {
   margin-bottom: 0;
 }
 .column {
-  margin: 1rem auto;
+  margin: 1rem;
   display: flex;
   flex-direction: row;
   gap: 1rem;
@@ -83,14 +91,14 @@ table {
 }
 
 .rowName {
-  margin: 1rem auto;
+  margin: 1rem;
   display: flex;
   flex-direction: row;
   gap: 1rem;
   margin-bottom: 0;
 }
 .row {
-  margin: 1rem auto;
+  margin: 1rem;
   display: flex;
   flex-direction: row;
   gap: 1rem;
@@ -112,6 +120,6 @@ button:hover {
 
 @media only screen and (min-width: 1024px) {
   .tableContainer {
-    background-color: honeydew;
+    border: #353621 solid 2px;
   }
 }
