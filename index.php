@@ -13,18 +13,19 @@
     <?php if (isset($_SESSION['user']['profile_image'])) : ?>
         <img class="userImage" src="/uploads/<?php echo $_SESSION['user']['profile_image'] ?>">
     <?php endif; ?>
-</article>
-<article>
-    <?php
-    $lists = addLists($database);
-    foreach ($lists as $list) : ?>
-        <?php $taskDeadline = fetchTasksToday($database, $list['id']);  ?>
-        <?php die(var_dump($taskDeadline)); ?>
 
+    <article>
 
-        <?php foreach ($tasks as $taskItem) : ?>
+        <?php
+        $tasksDUE = fetchTasksToday($database); ?>
+
+        <?php foreach ($tasksDUE as $dueDate) : ?>
+            <div><?= $dueDate['title'] ?></div>
+            <?php die(var_dump($dueDate['title'])); ?>
+            <div><?= $dueDate['description'] ?></div>
+            <div><?= $dueDate['deadline'] ?></div>
         <?php endforeach; ?>
-    <?php endforeach; ?>
-</article>
 
-<?php require __DIR__ . '/views/footer.php'; ?>
+    </article>
+
+    <?php require __DIR__ . '/views/footer.php'; ?>
