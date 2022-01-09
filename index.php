@@ -2,22 +2,8 @@
 <?php require __DIR__ . '/views/header.php'; ?>
 
 
-<?php
-$currentUser = $_SESSION['user']['id'];
-$todaysTasks = collectTodaysTasks($database, $currentUser);
-
-?>
-<?php foreach ($todaysTasks as $todayTask) : ?>
-
-    <div><?= $todayTask['title']; ?></div>
-    <div><?= $todayTask['description']; ?></div>
-    <div><?= $todayTask['deadline']; ?></div>
-
-<?php endforeach; ?>
-
-
-
 <article>
+
     <h1><?php echo $config['title']; ?></h1>
     <p>This is your home page.</p>
 
@@ -31,5 +17,23 @@ $todaysTasks = collectTodaysTasks($database, $currentUser);
     <?php endif; ?>
 
 </article>
+<?php
+$currentUser = $_SESSION['user']['id'];
+$todaysTasks = collectTodaysTasks($database, $currentUser);
+
+?>
+<div class="tasksDUE">
+    <?php foreach ($todaysTasks as $todayTask) : ?>
+
+        <div class="DUE"><?= $todayTask['title']; ?></div>
+        <br>
+        <div class="DUE"><?= $todayTask['description']; ?></div>
+        <br>
+        <div class="DUE"><?= $todayTask['deadline']; ?></div>
+
+    <?php endforeach; ?>
+</div>
+
+
 
 <?php require __DIR__ . '/views/footer.php'; ?>

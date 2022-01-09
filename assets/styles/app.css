@@ -160,4 +160,15 @@ button:hover {
   .listForm {
     width: 90%;
   }
+  .tasksDUE {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0;
+    font-size: 1rem;
+    text-align: left;
+    justify-content: space-between;
+    margin: 1rem;
+  }
+  .due {
+  }
 }

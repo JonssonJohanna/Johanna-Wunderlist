@@ -43,6 +43,5 @@ function collectTodaysTasks(PDO $database, int $userId): array
     $sql->bindParam(':deadline', $todaysDate);
     $sql->execute();
     $todaysTasks =  $sql->fetchAll(PDO::FETCH_ASSOC);
-    die(var_dump($todaysTasks));
     return $todaysTasks;
 }
