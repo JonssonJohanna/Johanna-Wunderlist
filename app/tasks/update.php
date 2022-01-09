@@ -28,7 +28,7 @@ if (isset($_POST['tasks'], $_POST['deadline'], $_POST['title'])) {
 // checkboxes
 $taskBox = isset($_POST['checkBoxes']);
 
-if (isset($_POST['id'])) {
+if (isset($_POST['id'], $_POST['checkBoxes'])) {
     $id = $_POST['id'];
 
     if ($taskBox) {

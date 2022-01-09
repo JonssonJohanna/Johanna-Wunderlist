@@ -52,7 +52,8 @@
                     <div class="rowName">
                         <div class="row">
 
-                            <form action="/app/tasks/update.php" method="POST">
+
+                            <form class="formCheckbox" action="/app/tasks/update.php" method="POST">
                                 <input type="hidden" name="id" value="" <?= $taskItem['id'] ?>>
 
                                 <input type="checkbox" name="checkBoxes" id="checkBoxes" <?= $taskItem['id'] ? 'checked' : '' ?>>

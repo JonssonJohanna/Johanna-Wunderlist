@@ -31,17 +31,30 @@ function collectTasks(PDO $database, int $listId): array
     return $tasks;
 }
 
-// functions that connects tasks with lists to display all tasks that should be completed today
-function fetchTasksToday(PDO $database): array
+// functions that displays all tasks that should be completed TODAY
+function fetchTasksToday(PDO $database, string $todaysDate): array
 {
 
+    $todaysDate = time();
+    $todaysDate = date("Y-m-d", $todaysDate);
 
-    $sql = $database->prepare('SELECT tasks.* FROM tasks INNER JOIN lists on tasks.list_id = lists.id WHERE deadline = :deadline AND list_id = :id');
-    $sql->bindParam(':id', $_SESSION['user']['id'], PDO::PARAM_INT);
-    $sql->bindParam(':deadline', $deadline);
+
+
+
+    $sql = $database->prepare('SELECT * FROM tasks WHERE $todaysDate = :deadline');
+    $sql->bindParam(':deadline', $todaysTasks);
+    die(var_dump($todaysTasks));
     $sql->execute();
+
+    // $todayTasks = ;
+    // die(var_dump($todayTasks));
+    // $sql = $database->prepare('SELECT tasks.* FROM tasks INNER JOIN lists on tasks.list_id = lists.id WHERE deadline = :deadline AND list_id = :id');
+    // $sql->bindParam(':id', $_SESSION['user']['id'], PDO::PARAM_INT);
+    // $sql->bindParam(':deadline', $todayTasks);
+    // $sql->execute();
 
     $tasksDUE = $sql->fetchAll(PDO::FETCH_ASSOC);
     die(var_dump($tasksDUE));
+
     return $tasksDUE;
 }
