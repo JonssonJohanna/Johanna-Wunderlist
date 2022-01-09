@@ -38,25 +38,13 @@ html * {
 }
 
 .navImage img {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 80px;
   object-fit: cover;
-  margin-right: 50%;
-}
-.tableContainer {
-  width: 100%;
-}
-
-.listTitle {
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-  margin-top: 1rem;
-  margin-bottom: 0;
 }
 .inputImage {
   height: 20px;
-  height: 30px;
+  height: 20px;
 }
 table {
   margin: 1rem;
@@ -65,6 +53,9 @@ table {
   gap: 1rem;
   margin-top: 1rem;
   margin-bottom: 0;
+}
+.tableContainer {
+  border: #353621 solid 2px;
 }
 .listTitle {
   margin: 1rem;
@@ -75,38 +66,37 @@ table {
   margin-bottom: 0;
 }
 .columnName {
-  margin: 1rem;
   display: flex;
   flex-direction: row;
-  gap: 1rem;
   margin-top: 1rem;
   margin-bottom: 0;
+  text-align: left;
+  font-size: 0.6rem;
+  font-weight: bold;
+  border-bottom: 2px solid #353621;
 }
 .column {
-  margin: 1rem;
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
+  margin: 0.8rem;
   margin-bottom: 0;
 }
 
 .rowName {
-  margin: 1rem;
   display: flex;
   flex-direction: row;
-  gap: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
+  text-align: left;
+  font-size: 0.6rem;
+  font-weight: bold;
   margin-bottom: 0;
 }
 .row {
-  margin: 1rem;
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
+  margin: 0.8rem;
   margin-bottom: 0;
 }
 
 button {
-  color: #9da993;
+  color: #dee0dc;
   background-color: #353621;
   height: 3rem;
   width: 6rem;
@@ -119,7 +109,55 @@ button:hover {
 }
 
 @media only screen and (min-width: 1024px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  h3 {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
   .tableContainer {
+    width: 90%;
     border: #353621 solid 2px;
+    margin-top: 1rem;
+  }
+  .listTitle {
+    font-weight: bold;
+  }
+  .columnName {
+    margin: 1rem;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 2px solid #353621;
+    margin-top: 1rem;
+    margin-bottom: 0;
+    text-align: left;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  .column {
+    margin: 1rem;
+    margin-bottom: 0;
+  }
+
+  .rowName {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0;
+    font-size: 1rem;
+    text-align: left;
+    justify-content: space-between;
+    margin: 1rem;
+  }
+  .row {
+    margin-bottom: 0;
+  }
+  .listForm {
+    width: 90%;
   }
 }

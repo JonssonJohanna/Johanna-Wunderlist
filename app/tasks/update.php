@@ -23,42 +23,26 @@ if (isset($_POST['tasks'], $_POST['deadline'], $_POST['title'])) {
 
     $_SESSION['user'][] = $sql->fetch(PDO::FETCH_ASSOC);
 }
-// Checks if checkbox form is checked and returns 0 for false and 1 for true
-if (isset($_POST['checkBoxes'])) {
-    $taskBox = 1;
-} else {
-    $taskBox = 0;
-}
-if (isset($_POST['checkBoxes'], $_POST['id'])) {
-    $completed = $_POST['checkBoxes'];
+
+
+// checkboxes
+$taskBox = isset($_POST['checkBoxes']);
+
+if (isset($_POST['id'])) {
     $id = $_POST['id'];
+
+    if ($taskBox) {
+        echo "The task $id is completed.";
+    } else {
+        echo "The task $id is not completed.";
+    }
+
     $insertSQL = ("UPDATE tasks SET completed = :completed WHERE id = :id");
     $sql = $database->prepare($insertSQL);
     $sql->bindParam(':completed', $taskBox, PDO::PARAM_BOOL);
     $sql->bindParam(':id', $id, PDO::PARAM_INT);
     $sql->execute();
 }
-
-
-// An attempt to get the checkboxes to work but couldnt get it to work
-// $taskBox = isset($_POST['checkBoxes']);
-
-// if (isset($_POST['id'], $_POST['checkBoxes'])) {
-//     $id = $_POST['id'];
-//     $taskBox = $_POST['checkBoxes'];
-
-//     if ($taskBox) {
-//         echo "The task $id is completed.";
-//     } else {
-//         echo "The task $id is not completed.";
-//     }
-
-//     $insertSQL = ("UPDATE tasks SET completed = :completed WHERE id = :id");
-//     $sql = $database->prepare($insertSQL);
-//     $sql->bindParam(':completed', $taskBox, PDO::PARAM_BOOL);
-//     $sql->bindParam(':id', $id, PDO::PARAM_INT);
-//     $sql->execute();
-// }
 
 
 
