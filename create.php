@@ -7,8 +7,8 @@
     <h2>Create Lists</h2>
     <form action="/app/lists/create.php" method="post">
         <div class="mb-3 listForm">
-            <label for="title">List name</label>
-            <input class="form-control" type="name" name="title" id="title" placeholder="write list name here" required>
+            <label for="title"></label>
+            <input class="form-control listForm" type="name" name="title" id="title" placeholder="Write list name here" required>
         </div>
         <button type="submit" name="submit">Create list</button>
     </form>
@@ -50,24 +50,12 @@
                 <?php $tasks = collectTasks($database, $list['id']);  ?>
                 <?php foreach ($tasks as $taskItem) : ?>
                     <div class="rowName">
-                        <!-- Form for submiting task as completed -->
                         <div class="row">
 
-
-                            <form action="/app/tasks/update.php" method="POST" name="taskBox<?= $taskItem['id'] ?>">
-                                <input type="hidden" name="id" value="<?= $taskItem['id'] ?>" />
-                                <input type="checkbox" name="checkBoxes" onclick="document.forms.taskBox<?= $taskItem['id'] ?>.submit();">
-                                <?php if ($taskItem['completed'] == 1) {
-                                    echo "Done";
-                                } elseif ($taskItem['completed'] != 1) {
-                                    echo "Not done";
-                                } ?>
-
-                            </form>
-                            <!-- <form action="/app/tasks/update.php" method="POST">
+                            <form action="/app/tasks/update.php" method="POST">
                                 <input type="hidden" name="id" value="" <?= $taskItem['id'] ?>>
 
-                                <input type="checkbox" name="checkBoxes" id="checkBoxes" <?= $taskItem['completed'] ? 'checked' : '' ?>>
+                                <input type="checkbox" name="checkBoxes" id="checkBoxes" <?= $taskItem['id'] ? 'checked' : '' ?>>
 
                                 <label for="checkBoxes">
 
@@ -76,8 +64,7 @@
                                 <div>
                                     <button type="submit">Submit</button>
                                 </div>
-                            </form> -->
-
+                            </form>
 
 
 
