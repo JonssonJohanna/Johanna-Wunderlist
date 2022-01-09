@@ -42,8 +42,6 @@
                     <div class="column">Title</div>
                     <div class="column">Description</div>
                     <div class="column">Date</div>
-                    <div class="column">Edit</div>
-                    <div class="column">Delete task</div>
                 </div>
 
                 <!-- Functions that loops out tasks -->

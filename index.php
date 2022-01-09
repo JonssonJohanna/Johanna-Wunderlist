@@ -22,17 +22,51 @@ $currentUser = $_SESSION['user']['id'];
 $todaysTasks = collectTodaysTasks($database, $currentUser);
 
 ?>
-<div class="tasksDUE">
-    <?php foreach ($todaysTasks as $todayTask) : ?>
 
-        <div class="DUE"><?= $todayTask['title']; ?></div>
-        <br>
-        <div class="DUE"><?= $todayTask['description']; ?></div>
-        <br>
-        <div class="DUE"><?= $todayTask['deadline']; ?></div>
+<div class="columnName">
+    <div class="column">Completed</div>
+    <div class="column">Title</div>
+    <div class="column">Description</div>
+    <div class="column">Date</div>
 
-    <?php endforeach; ?>
 </div>
+<?php foreach ($todaysTasks as $todayTask) : ?>
+    <div class="rowName">
+
+        <ul>
+
+            <li>
+                <form class="formCheckbox" action="/app/tasks/update.php" method="POST">
+                    <input type="hidden" name="id" value="" <?= $todayTask['id'] ?>>
+
+                    <input type="checkbox" name="checkBoxes" id="checkBoxes" <?= $todayTask['id'] ? 'checked' : '' ?>>
+
+                    <label for="checkBoxes">
+
+                    </label>
+
+                    <div>
+                        <button type="submit">Submit</button>
+                    </div>
+                </form>
+
+            </li>
+
+        </ul>
+        <ul>
+            <li><?= $todayTask['title']; ?></li>
+        </ul>
+
+        <ul>
+            <li><?= $todayTask['description']; ?></li>
+        </ul>
+
+        <ul>
+            <li><?= $todayTask['deadline']; ?></li>
+        </ul>
+
+    </div>
+<?php endforeach; ?>
 
 
 
