@@ -4,7 +4,7 @@
 
 
 <article>
-    <h1>Edit your profile</h1>
+    <h2>Edit your profile</h2>
 
     <form action="/app/users/update/image.php" method="post" enctype="multipart/form-data">
         <!-- This should be in ist own form -->
@@ -28,7 +28,7 @@
         <?php endif;
         endif; ?>
     </form>
-    <h2>Edit email</h2>
+    <h3>Edit email</h3>
     <form action="/app/users/update/email.php" method="post">
         <div class="mb-3">
             <label for="newEmail">Email</label>
@@ -44,7 +44,7 @@
         ?>
     </form>
 
-    <h2>Edit password</h2>
+    <h3>Edit password</h3>
     <form action="/app/users/update/password.php" method="POST">
 
         <div class="mb-3">
