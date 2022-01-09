@@ -6,17 +6,12 @@
 $currentUser = $_SESSION['user']['id'];
 $todaysTasks = collectTodaysTasks($database, $currentUser);
 
-
-// $taskAuthor = $database->prepare('SELECT * FROM tasks WHERE id = :user_id');
-// $taskAuthor->bindParam(':user_id', $currentUser, PDO::PARAM_INT);
-// $taskAuthor->execute();
-
-// $taskAuthor->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <?php foreach ($todaysTasks as $todayTask) : ?>
-    <?php die(var_dump($todayTask)); ?>
 
-    <p><?= $todayTask['deadline']; ?></p>
+    <div><?= $todayTask['title']; ?></div>
+    <div><?= $todayTask['description']; ?></div>
+    <div><?= $todayTask['deadline']; ?></div>
 
 <?php endforeach; ?>
 
