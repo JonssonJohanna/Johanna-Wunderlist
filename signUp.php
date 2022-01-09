@@ -39,7 +39,7 @@ if (!isset($_SESSION['messages'])) {
         </div>
 
 
-        <button>Sign up</button>
+        <button class="buttonAlert">Sign up</button>
 
     </form>
 </article>
