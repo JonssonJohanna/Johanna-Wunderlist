@@ -13,17 +13,17 @@
 
         <div class="mb-3">
             <label for="password">Password</label>
-            <input class="form-control" type="password" name="password" id="password" required>
+            <input class="form-control" type="password" name="password" id="password" minlength="16" required>
             <small class="form-text">Please provide the your password (passphrase).</small>
         </div>
         <button type="submit">Login</button>
 
     </form>
 
-    <form method="GET" action="signUp.php">
+    <form method="GET" action="register.php">
         <button type="submit">Sign up</button>
     </form>
-    <!-- <button onclick="window.location.href='signup.php'">Sign up</button> -->
+
 
 </article>
 

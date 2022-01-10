@@ -29,17 +29,16 @@ if (!isset($_SESSION['messages'])) {
 
         <div class="mb-3">
             <label for="password">Password</label>
-            <input class="form-control" type="password" name="password" id="password" required>
-            <small class="form-text">Please provide your password (passphrase).</small>
+            <input class="form-control" type="password" name="password" id="password" minlength="16" required>
+            <small class="form-text">Please provide your password.</small>
         </div>
         <div class="mb-3">
             <label for="password">RepeatPassword</label>
-            <input class="form-control" type="password" name="repeatPassword" id="password" required>
+            <input class="form-control" type="password" name="repeatPassword" id="password" minlength="16" required>
             <small class="form-text">Repeat password.</small>
         </div>
 
-
-        <button class="buttonAlert">Sign up</button>
+        <button>Sign up</button>
 
     </form>
 </article>

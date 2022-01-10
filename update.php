@@ -34,7 +34,7 @@
             <label for="newEmail">Email</label>
             <input class="form-control" type="email" name="newEmail" id="newEmail" placeholder="enter your new email" required>
             <small class="form-text">Please provide your new email address.</small>
-            <button type="submit">Update new email</button>
+            <button type="submit">Update email</button>
         </div>
         <?php if (isset($_SESSION['messageEmail'])) :
             echo $_SESSION['messageEmail'];
@@ -49,7 +49,7 @@
 
         <div class="mb-3">
             <label for="newPassword">Write new password</label>
-            <input class="form-control" type="password" name="newPassword" id="newPassword">
+            <input class="form-control" type="password" name="newPassword" id="newPassword" minlength="16">
             <small class="form-text">Write your new password (passphrase).</small>
 
         </div>
@@ -61,10 +61,10 @@
         endif; ?>
         <div class="mb-3">
             <label for="confirmNewPassword">Confirm new password</label>
-            <input class="form-control" type="password" name="confirmNewPassword" id="confirmNewPassword">
+            <input class="form-control" type="password" name="confirmNewPassword" id="confirmNewPassword" minlength="16">
             <small class="form-text">Confirm your new password (passphrase).</small>
         </div>
-        <button type="submit">Update new password</button>
+        <button type="submit">Update password</button>
 
         <?php if (isset($_SESSION['messagePassword'])) :
             echo $_SESSION['messagePassword'];
