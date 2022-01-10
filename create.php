@@ -36,63 +36,59 @@
                     </form>
                 </div>
             </div>
-            <div class="table">
-                <div class="columnName">
-                    <div class="column">Completed</div>
-                    <div class="column">Title</div>
-                    <div class="column">Description</div>
-                    <div class="column">Date</div>
-                </div>
+            <table>
+                <tr class="columnName">
+                    <th class="column">Completed</th>
+                    <th class="column">Title</th>
+                    <th class="column">Description</th>
+                    <th class="column">Date</th>
+                    <th class="column">Edit</th>
+                    <th class="column">Delete</th>
+                </tr>
 
                 <!-- Functions that loops out tasks -->
                 <?php $tasks = collectTasks($database, $list['id']);  ?>
                 <?php foreach ($tasks as $taskItem) : ?>
-                    <div class="rowName">
-                        <div class="row">
+                    <tr class="rowName">
+                        <td class="row">
 
 
                             <form class="formCheckbox" action="/app/tasks/update.php" method="POST">
-                                <input type="hidden" name="id" value="" <?= $taskItem['id'] ?>>
+                                <input type="hidden" name="id" value=" <?= $taskItem['id'] ?>">
 
-                                <input type="checkbox" name="checkBoxes" id="checkBoxes" <?= $taskItem['id'] ? 'checked' : '' ?>>
+                                <input type="checkbox" name="completed" id="completed" <?= $taskItem['completed'] ? 'checked' : '' ?>>
 
-                                <label for="checkBoxes">
+                                <label for="completed">
 
                                 </label>
-
-                                <div>
-                                    <button type="submit">Submit</button>
-                                </div>
                             </form>
+                        </td>
 
 
-
-                        </div>
-                        <div class="row"><?= $taskItem['title']; ?></div>
-                        <div class="row"><?= $taskItem['description']; ?></div>
-                        <div class="row"><?= $taskItem['deadline']; ?></div>
+                        <td class="row"><?= $taskItem['title']; ?></td>
+                        <td class="row"><?= $taskItem['description']; ?></td>
+                        <td class="row"><?= $taskItem['deadline']; ?></td>
                         <!-- Hidden form for edit tasks and onnects task with its id  -->
-                        <div class="row">
-                            <div>
-                                <form action="/updateTasks.php" method="POST">
-                                    <input type="hidden" name="id" value="<?= $taskItem['id'] ?>" />
-                                    <input class="inputImage" type="image" src="/images/more.png">
+                        <td class="row">
 
-                                </form>
-                            </div>
-                        </div class="row">
-                        <div class="row" class="delete">
-                            <div>
-                                <form action="/app/tasks/delete.php" method="POST">
-                                    <input type="hidden" name="id" value="<?= $taskItem['id'] ?>" />
-                                    <input class="inputImage" type="image" src="/images/delete.png">
+                            <form action="/updateTasks.php" method="POST">
+                                <input type="hidden" name="id" value="<?= $taskItem['id'] ?>" />
+                                <input class="inputImage" type="image" src="/images/more.png">
 
-                                </form>
-                            </div>
-                        </div>
-                    </div>
+                            </form>
+                        </td>
+                        <!-- </div class="row"> -->
+                        <td class="row" class="delete">
+
+                            <form action="/app/tasks/delete.php" method="POST">
+                                <input type="hidden" name="id" value="<?= $taskItem['id'] ?>" />
+                                <input class="inputImage" type="image" src="/images/delete.png">
+
+                            </form>
+                        </td>
+                    </tr>
                 <?php endforeach; ?>
-            </div>
+            </table>
 
             <!-- Details and summary hides form -->
             <details>

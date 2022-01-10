@@ -5,3 +5,9 @@ const form = document.querySelector('.formCheckbox');
 const task = document.querySelector('input[type=checkbox]');
 
 task.addEventListener('click', () => form.submit());
+
+// function completedTasks(forms) {
+//   forms.forEach((form) => {
+//     task.addEventListener('click', () => form.submit());
+//   });
+// }

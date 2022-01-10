@@ -25,7 +25,7 @@ if (isset($_POST['name'], $_POST['email'], $_POST['password'], $_POST['repeatPas
 }
 if ($name === "") {
     $_SESSION['messages'] = "The name field is missing.";
-    header("Location: /../../signUp.php");
+    header("Location: /../../register.php");
     exit;
 }
 
@@ -39,4 +39,4 @@ if (strlen($password) < 16) {
 }
 
 
-// redirect('/index.php');
+redirect('/index.php');

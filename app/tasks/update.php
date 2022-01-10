@@ -26,15 +26,15 @@ if (isset($_POST['tasks'], $_POST['deadline'], $_POST['title'])) {
 
 
 // checkboxes
-$taskBox = isset($_POST['checkBoxes']);
 
-if (isset($_POST['id'], $_POST['checkBoxes'])) {
+if (isset($_POST['id'])) {
     $id = $_POST['id'];
+    $isCompleted = isset($_POST['completed']);
 
-    if ($taskBox) {
-        echo "The task $id is completed.";
+    if ($isCompleted) {
+        $taskBox = 1;
     } else {
-        echo "The task $id is not completed.";
+        $taskBox = 0;
     }
 
     $insertSQL = ("UPDATE tasks SET completed = :completed WHERE id = :id");
@@ -42,6 +42,8 @@ if (isset($_POST['id'], $_POST['checkBoxes'])) {
     $sql->bindParam(':completed', $taskBox, PDO::PARAM_BOOL);
     $sql->bindParam(':id', $id, PDO::PARAM_INT);
     $sql->execute();
+
+    $_SESSION['user'][] = $sql->fetch(PDO::FETCH_ASSOC);
 }
 
 
