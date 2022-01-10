@@ -13,8 +13,8 @@
 
         <div class="mb-3">
             <label for="password">Password</label>
-            <input class="form-control" type="password" name="password" id="password" minlength="16" required>
-            <small class="form-text">Please provide the your password (passphrase).</small>
+            <input class="form-control" type="password" name="password" id="password" required>
+            <small class="form-text">Please provide the your password.</small>
         </div>
         <button type="submit">Login</button>
 

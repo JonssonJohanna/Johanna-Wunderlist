@@ -32,9 +32,8 @@ html * {
 }
 
 .userImage {
-  width: 400px;
-  height: 300px;
-  border-radius: 100%;
+  width: 240px;
+  height: 200px;
 }
 
 .navImage img {
@@ -58,6 +57,7 @@ html * {
 
 .tableContainer {
   border: #353621 solid 2px;
+  margin-bottom: 1rem;
 }
 
 .listTitle {
@@ -69,32 +69,28 @@ html * {
   margin-bottom: 0;
 }
 .columnName {
+  display: flex;
+  flex-direction: row;
   margin-bottom: 0;
-  width: 100%;
-  text-align: left;
   font-size: 0.6rem;
   font-weight: bold;
   border-bottom: 2px solid #353621;
 }
-/*.column {
-   margin: 0.8rem;
+.column {
+  margin: 0.8rem;
   margin-bottom: 0;
-  justify-content: space-between;
-}*/
+}
 
 .rowName {
   display: flex;
-
-  text-align: left;
   font-size: 0.6rem;
-  font-weight: bold;
+  font-weight: lighter;
   margin-bottom: 0;
 }
-/* .row {
-  /* margin: 0.8rem;
+.row {
+  margin: 0.8rem;
   margin-bottom: 0;
-  justify-content: space-between;
-} */
+}
 
 th,
 tr,
@@ -116,6 +112,26 @@ button:hover {
   box-shadow: #353621 2px -2px 2px 2px;
 }
 
+.todaysTaskTitle {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+ul,
+li {
+  list-style-type: none;
+}
+.taskToday {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid #353621;
+}
+.taskTodayRow {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 0.8rem;
+}
+
 @media only screen and (min-width: 1024px) {
   h1 {
     font-size: 2rem;
@@ -129,22 +145,22 @@ button:hover {
   }
 
   .tableContainer {
-    width: 90%;
+    width: 100%;
     border: #353621 solid 2px;
     margin-top: 1rem;
   }
   .listTitle {
     font-weight: bold;
+    font-size: 1.5rem;
   }
   .columnName {
-    margin: 1rem;
+    margin-left: 1rem;
     display: flex;
     flex-direction: row;
     border-bottom: 2px solid #353621;
     margin-top: 1rem;
     margin-bottom: 0;
     text-align: left;
-    justify-content: space-between;
     font-weight: bold;
     font-size: 1rem;
   }
@@ -152,24 +168,35 @@ button:hover {
     margin: 1rem;
     margin-bottom: 0;
   }
+  table {
+    width: 100%;
+  }
 
   .rowName {
-    display: flex;
-    flex-direction: row;
     margin-bottom: 0;
     font-size: 1rem;
-    text-align: left;
-    justify-content: space-between;
     margin: 1rem;
+    text-align: left;
   }
   .row {
     margin-bottom: 0;
+    margin-left: 1rem;
   }
   .listForm {
     width: 90%;
   }
-  ul,
-  li {
-    list-style-type: none;
+
+  .todaysTaskTitle {
+    font-weight: bold;
+    font-size: 1rem;
+  }
+
+  .taskToday {
+    display: flex;
+    justify-content: space-between;
+  }
+  .taskTodayRow {
+    display: flex;
+    justify-content: space-between;
   }
 }

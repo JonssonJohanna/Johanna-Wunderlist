@@ -77,7 +77,6 @@
 
                             </form>
                         </td>
-                        <!-- </div class="row"> -->
                         <td class="row" class="delete">
 
                             <form action="/app/tasks/delete.php" method="POST">

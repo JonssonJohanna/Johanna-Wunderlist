@@ -23,7 +23,7 @@
 
             if (isset($_SESSION['user']['profile_image'])) :
         ?>
-                <div class="userImage"><img src="/uploads/<?php echo $_SESSION['user']['profile_image'] ?>"></div>
+                <div class="newImage"><img height="200px" width="280px" src="/uploads/<?php echo $_SESSION['user']['profile_image'] ?>"></div>
 
         <?php endif;
         endif; ?>
