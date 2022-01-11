@@ -5,7 +5,7 @@ declare(strict_types=1);
 require __DIR__ . '/../../autoload.php';
 
 
-//user editinig email
+// Allows user to edit email
 
 if (isset($_POST['newEmail'])) {
     $newEmail = trim(filter_var($_POST['newEmail'], FILTER_VALIDATE_EMAIL));

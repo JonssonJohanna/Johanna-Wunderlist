@@ -13,7 +13,7 @@ if (isset($_FILES['profile_image'])) {
     move_uploaded_file($avatarTemp, $destination);
     $alert = 'The file is uploaded';
 
-    // Adds a row in database
+
     $insertSQL = ("UPDATE users SET profile_image = :profile_image WHERE id = :id");
 
     $sql = $database->prepare($insertSQL);

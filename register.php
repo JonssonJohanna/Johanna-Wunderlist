@@ -7,9 +7,8 @@ if (!isset($_SESSION['messages'])) {
 } else {
     $messages = $_SESSION['messages'];
     unset($_SESSION['messages']);
-}
-?>
-
+} ?>
+<!--  Form for creating a new account -->
 <article>
     <h1>Create an account</h1>
     <p><?= $messages; ?></p>
@@ -33,13 +32,14 @@ if (!isset($_SESSION['messages'])) {
             <label for="password">Repeat password</label>
             <input class="form-control" type="password" name="repeatPassword" id="password" placeholder="Verify password" required>
         </div>
+        <!-- Error message -->
         <div class="alertText">
             <?php
             if (isset($_SESSION['messageError'])) :
                 echo $_SESSION['messageError'];
-                unset($_SESSION['messageError']);
+                unset($_SESSION['messageError']); ?>
 
-            endif; ?>
+            <?php endif; ?>
         </div>
 
         <button>Sign up</button>

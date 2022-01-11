@@ -4,11 +4,13 @@ declare(strict_types=1);
 
 require __DIR__ . '/../../autoload.php';
 
+// Logic for users to update password
+
 if (isset($_POST['newPassword'])) {
     $newPassword = password_hash($_POST['newPassword'], PASSWORD_DEFAULT);
     $confirmNewPassword = password_hash($_POST['confirmNewPassword'], PASSWORD_DEFAULT);
 
-    // ett meddelande som skrivs ut i den andra edit.php ifall man har bytt e-post, om SESSION emailMessage isset.
+    // Error messages
 
     if ($_POST['newPassword'] !== $_POST['confirmNewPassword']) {
         $_SESSION['messageError'] = "Passwords do not match";

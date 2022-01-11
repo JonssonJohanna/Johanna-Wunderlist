@@ -2,7 +2,7 @@
 <?php require __DIR__ . '/views/header.php';  ?>
 
 
-
+<!-- Form for users to edit their profile image, email and password. -->
 <article>
     <h2>Edit your profile</h2>
 
@@ -19,12 +19,11 @@
             echo $_SESSION['messages'];
             unset($_SESSION['messages']);
 
-            if (isset($_SESSION['user']['profile_image'])) :
-        ?>
-                <div class="newImage"><img height="200px" width="280px" src="/uploads/<?php echo $_SESSION['user']['profile_image'] ?>"></div>
+            if (isset($_SESSION['user']['profile_image'])) : ?>
+                <div class="newImage"><img height="200px" width="280px" src="/uploads/<?php echo $_SESSION['user']['profile_image'] ?> " alt="user profile image"></div>
 
-        <?php endif;
-        endif; ?>
+            <?php endif; ?>
+        <?php endif; ?>
     </form>
     <h3>Edit email</h3>
     <form action="/app/users/update/email.php" method="post">
@@ -34,12 +33,12 @@
             <small class="form-text">Please provide your new email address.</small>
             <button type="submit">Update email</button>
         </div>
-        <?php if (isset($_SESSION['messageEmail'])) :
-            echo $_SESSION['messageEmail'];
-            unset($_SESSION['messageEmail']);
+        <div class="alertText">
+            <?php if (isset($_SESSION['messageEmail'])) :
+                echo $_SESSION['messageEmail'];
+                unset($_SESSION['messageEmail']); ?>
 
-        endif;
-        ?>
+            <?php endif; ?>
     </form>
 
     <h3>Edit password</h3>
@@ -51,12 +50,14 @@
             <small class="form-text">Write your new password.</small>
 
         </div>
-        <?php
-        if (isset($_SESSION['messageError'])) :
-            echo $_SESSION['messageError'];
-            unset($_SESSION['messageError']);
+        <div class="alertText">
+            <?php
+            if (isset($_SESSION['messageError'])) :
+                echo $_SESSION['messageError'];
+                unset($_SESSION['messageError']); ?>
 
-        endif; ?>
+            <?php endif; ?>
+        </div>
         <div class="mb-3">
             <label for="confirmNewPassword">Confirm new password</label>
             <input class="form-control" type="password" name="confirmNewPassword" id="confirmNewPassword">
@@ -68,10 +69,10 @@
                 echo $_SESSION['messagePassword'];
                 unset($_SESSION['messagePassword']);
 
-                if (isset($_SESSION['user']['messagePassword'])) :
+                if (isset($_SESSION['user']['messagePassword'])) : ?>
 
-                endif;
-            endif; ?>
+                <?php endif; ?>
+            <?php endif; ?>
         </div>
 
     </form>

@@ -3,7 +3,7 @@
     <?php
     if (isset($_SESSION['user']['profile_image'])) :
     ?>
-        <div class="navImage"><img src="/uploads/<?php echo $_SESSION['user']['profile_image'] ?>"></div>
+        <div class="navImage"><img src="/uploads/<?php echo $_SESSION['user']['profile_image'] ?>" alt="user profile image"></div>
 
     <?php endif;
     ?>

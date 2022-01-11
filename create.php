@@ -24,14 +24,14 @@
                 <div>
                     <form action="/updateLists.php" method="POST">
                         <input type="hidden" name="id" value="<?= $list['id'] ?>" />
-                        <input class="inputImage" type="image" src="/images/more.png">
+                        <input class="inputImage" type="image" src="/images/more.png" alt="icon for edit">
 
                     </form>
                 </div>
                 <div>
                     <form action="/app/lists/delete.php" method="POST">
                         <input type="hidden" name="id" value="<?= $list['id'] ?>" />
-                        <input class="inputImage" type="image" src="/images/delete.png">
+                        <input class="inputImage" type="image" src="/images/delete.png" alt="icon for delete">
 
                     </form>
                 </div>
@@ -73,7 +73,7 @@
 
                             <form action="/updateTasks.php" method="POST">
                                 <input type="hidden" name="id" value="<?= $taskItem['id'] ?>" />
-                                <input class="inputImage" type="image" src="/images/more.png">
+                                <input class="inputImage" type="image" src="/images/more.png" alt="icon for edit">
 
                             </form>
                         </td>
@@ -81,7 +81,7 @@
 
                             <form action="/app/tasks/delete.php" method="POST">
                                 <input type="hidden" name="id" value="<?= $taskItem['id'] ?>" />
-                                <input class="inputImage" type="image" src="/images/delete.png">
+                                <input class="inputImage" type="image" src="/images/delete.png" alt="icon for delete">
 
                             </form>
                         </td>

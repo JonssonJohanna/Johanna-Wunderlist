@@ -13,7 +13,7 @@
 
     <?php endif; ?>
     <?php if (isset($_SESSION['user']['profile_image'])) : ?>
-        <img class="userImage" src="/uploads/<?php echo $_SESSION['user']['profile_image'] ?>">
+        <img class="userImage" src="/uploads/<?php echo $_SESSION['user']['profile_image'] ?>" alt="user profile image">
     <?php endif; ?>
 
 </article>
