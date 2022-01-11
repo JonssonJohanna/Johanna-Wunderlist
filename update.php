@@ -7,8 +7,6 @@
     <h2>Edit your profile</h2>
 
     <form action="/app/users/update/image.php" method="post" enctype="multipart/form-data">
-        <!-- This should be in ist own form -->
-        <!-- <form action="app/users/images.php" method="post" enctype="multipart/form-data"> -->
         <div>
             <label for="profile_image">Upload optional image here</label>
             <input type="file" name="profile_image" id="profile_image" accept=".jpg, .png" required>

@@ -20,7 +20,7 @@ if (isset($_POST['id'])) {
         <input class="form-control" type="name" name="title" id="title" value="<?= $editLists['title'] ?>" required>
         <input type="hidden" name="id" value="<?= $editLists['id'] ?>" />
     </div>
-    <button type="submit" name="submit">Submit to edit list name</button>
+    <button type="submit" name="submit">Update list</button>
 </form>
 
 </div>

@@ -49,8 +49,8 @@
                 <!-- Functions that loops out tasks -->
                 <?php $tasks = collectTasks($database, $list['id']);  ?>
                 <?php foreach ($tasks as $taskItem) : ?>
-                    <tr class="rowName">
-                        <td class="row">
+                    <tr>
+                        <td>
 
 
                             <form class="formCheckbox" action="/app/tasks/update.php" method="POST">
@@ -65,11 +65,11 @@
                         </td>
 
 
-                        <td class="row"><?= $taskItem['title']; ?></td>
-                        <td class="row"><?= $taskItem['description']; ?></td>
-                        <td class="row"><?= $taskItem['deadline']; ?></td>
+                        <td><?= $taskItem['title']; ?></td>
+                        <td><?= $taskItem['description']; ?></td>
+                        <td><?= $taskItem['deadline']; ?></td>
                         <!-- Hidden form for edit tasks and onnects task with its id  -->
-                        <td class="row">
+                        <td>
 
                             <form action="/updateTasks.php" method="POST">
                                 <input type="hidden" name="id" value="<?= $taskItem['id'] ?>" />
@@ -77,7 +77,7 @@
 
                             </form>
                         </td>
-                        <td class="row" class="delete">
+                        <td class="delete">
 
                             <form action="/app/tasks/delete.php" method="POST">
                                 <input type="hidden" name="id" value="<?= $taskItem['id'] ?>" />

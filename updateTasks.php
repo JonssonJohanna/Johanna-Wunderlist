@@ -31,7 +31,7 @@ if (isset($_POST['id'])) {
         <input type="hidden" name="id" value="<?= $editTasks['id'] ?>" />
     </div>
 
-    <button type="submit">Press to complete changes</button>
+    <button type="submit">Update task</button>
 </form>
 </details>
 </div>

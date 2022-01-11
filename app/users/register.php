@@ -34,9 +34,10 @@ $password = $_POST['password'];
 
 if (strlen($password) < 16) {
     echo "Password must be at least 16 characters long";
+    header("Location: /../../register.php");
+    exit;
 } else {
     echo "Your password is valid!";
 }
 
-
-redirect('/index.php');
+// redirect('/index.php');

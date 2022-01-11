@@ -1,13 +1,11 @@
-// alert text
-
 // When the user clicks on the checkbox the form will automagically submit.
-const form = document.querySelector('.formCheckbox');
-const task = document.querySelector('input[type=checkbox]');
+const forms = document.querySelector('.formCheckbox');
+const tasks = document.querySelectorAll('input[type=checkbox]');
 
-task.addEventListener('click', () => form.submit());
+function handleClick(event) {
+  event.target.parentNode.submit();
+}
 
-// function completedTasks(forms) {
-//   forms.forEach((form) => {
-//     task.addEventListener('click', () => form.submit());
-//   });
-// }
+tasks.forEach((task) => {
+  task.addEventListener('click', handleClick);
+});

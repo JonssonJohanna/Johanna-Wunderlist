@@ -17,61 +17,41 @@
     <?php endif; ?>
 
 </article>
+
+<!-- Connects with database and function -->
 <?php
 if (isset($_SESSION['user'])) :
     $currentUser = $_SESSION['user']['id'];
     $todaysTasks = collectTodaysTasks($database, $currentUser);
-
-
 ?>
-    <div class="todaysTaskTitle">Tasks that needs to be done today</div>
-    <div class="tableContainer">
-        <div class="taskToday">
-            <div>Completed</div>
-            <div>Title</div>
-            <div>Description</div>
-            <div>Date</div>
+    <h3 class="todaysTaskTitle">Tasks that needs to be done today</h3>
+    <table class="taskTodayContainer">
+        <tr class="columnName">
+            <th class="column">Title</th>
+            <th class="column">Description</th>
+            <th class="column">Date</th>
 
-        </div>
+        </tr>
+
         <?php foreach ($todaysTasks as $todayTask) : ?>
-            <div class="taskTodayRow">
+            <tr>
 
-                <ul>
+                <td>
+                    <?= $todayTask['title']; ?>
+                </td>
 
-                    <li>
-                        <form class="formCheckbox" action="/app/tasks/completed.php" method="POST">
-                            <input type="hidden" name="id" value=" <?= $todayTask['id'] ?>">
+                <td>
+                    <?= $todayTask['description']; ?>
+                </td>
 
-                            <input type="checkbox" name="completed" id="completed" <?= $todayTask['completed'] ? 'checked' : '' ?>>
+                <td>
+                    <?= $todayTask['deadline']; ?>
+                </td>
 
-                            <label for="checkBoxes">
-
-                            </label>
-
-                            <!-- <div>
-                            <button type="submit">Submit</button>
-                        </div> -->
-                        </form>
-
-                    </li>
-
-                </ul>
-                <ul>
-                    <li><?= $todayTask['title']; ?></li>
-                </ul>
-
-                <ul>
-                    <li><?= $todayTask['description']; ?></li>
-                </ul>
-
-                <ul>
-                    <li><?= $todayTask['deadline']; ?></li>
-                </ul>
-
-            </div>
+            </tr>
         <?php endforeach; ?>
 
-    </div>
+    </table>
 <?php endif; ?>
 
 <?php require __DIR__ . '/views/footer.php'; ?>
