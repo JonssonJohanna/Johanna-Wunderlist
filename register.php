@@ -33,6 +33,14 @@ if (!isset($_SESSION['messages'])) {
             <label for="password">Repeat password</label>
             <input class="form-control" type="password" name="repeatPassword" id="password" placeholder="Verify password" required>
         </div>
+        <div class="alertText">
+            <?php
+            if (isset($_SESSION['messageError'])) :
+                echo $_SESSION['messageError'];
+                unset($_SESSION['messageError']);
+
+            endif; ?>
+        </div>
 
         <button>Sign up</button>
 

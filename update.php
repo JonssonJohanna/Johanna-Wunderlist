@@ -47,8 +47,8 @@
 
         <div class="mb-3">
             <label for="newPassword">Write new password</label>
-            <input class="form-control" type="password" name="newPassword" id="newPassword" minlength="16">
-            <small class="form-text">Write your new password (passphrase).</small>
+            <input class="form-control" type="password" name="newPassword" id="newPassword">
+            <small class="form-text">Write your new password.</small>
 
         </div>
         <?php
@@ -59,20 +59,20 @@
         endif; ?>
         <div class="mb-3">
             <label for="confirmNewPassword">Confirm new password</label>
-            <input class="form-control" type="password" name="confirmNewPassword" id="confirmNewPassword" minlength="16">
-            <small class="form-text">Confirm your new password (passphrase).</small>
+            <input class="form-control" type="password" name="confirmNewPassword" id="confirmNewPassword">
+            <small class="form-text">Confirm your new password.</small>
         </div>
         <button type="submit">Update password</button>
+        <div class="alertText">
+            <?php if (isset($_SESSION['messagePassword'])) :
+                echo $_SESSION['messagePassword'];
+                unset($_SESSION['messagePassword']);
 
-        <?php if (isset($_SESSION['messagePassword'])) :
-            echo $_SESSION['messagePassword'];
-            unset($_SESSION['messagePassword']);
+                if (isset($_SESSION['user']['messagePassword'])) :
 
-            if (isset($_SESSION['user']['messagePassword'])) :
-
-            endif;
-        endif;
-        ?>
+                endif;
+            endif; ?>
+        </div>
 
     </form>
 

@@ -42,8 +42,8 @@ html * {
   object-fit: cover;
 }
 .inputImage {
-  height: 20px;
-  height: 20px;
+  height: 10px;
+  height: 15px;
 }
 .table {
   margin: 1rem;
@@ -120,6 +120,15 @@ button:hover {
   h3 {
     font-size: 1rem;
     font-weight: bold;
+  }
+
+  .alertText {
+    color: tomato;
+  }
+
+  .inputImage {
+    height: 20px;
+    height: 20px;
   }
 
   .tableContainer {
