@@ -3,6 +3,7 @@
 # Johanna-Wunderlist
 
 This is our christmas assignment in PHP, SQL, HTML, CSS and JavaScript, the purpose was to create a to-do website where users can create lists and tasks to organize their every day life.
+Link to GitHub repo: https://github.com/JonssonJohanna/Johanna-Wunderlist
 
 # Installation
 
