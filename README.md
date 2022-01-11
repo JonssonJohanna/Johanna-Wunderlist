@@ -1,12 +1,17 @@
-INSERT MANDATORY GIF
+<img src="https://media.giphy.com/media/aSZSj0mT8f6tW/giphy.gif" alt="mandatory gif">
 
-# Project Title
+# Johanna-Wunderlist
 
-Text about the project and why it exists. This would also be a great place to link the project online.
+This is our christmas assignment in PHP, SQL, HTML, CSS and JavaScript, the purpose was to create a to-do website where users can create lists and tasks to organize their every day life.
 
 # Installation
 
-Add the installation instructions.
+Follow the steps below for installation.
+
+1. clone the repository so that you can access the files on your computer and open them in your code editor. https://github.com/JonssonJohanna/Johanna-Wunderlist
+2. Open the project in your editor
+3. Write php -S localhost:8000 in the terminal and open the link.
+4. To see the project in your browser, file and click Open Live server.
 
 # Code Review
 
@@ -27,5 +32,5 @@ Code review written by [Jane Doh](https://github.com/username).
 
 Tested by the following people:
 
-1. Jane Doe
-2. John Doe
+1. Jennifer Andersson
+2. Hanna Rosenberg
