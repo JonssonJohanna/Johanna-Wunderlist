@@ -14,23 +14,22 @@
     </form>
 
     <!-- Functions that loops out list titles -->
-    <?php
-    $lists = addLists($database);
-    foreach ($lists as $list) : ?>
+    <?php $lists = addLists($database); ?>
+    <?php foreach ($lists as $list) : ?>
 
         <div class="tableContainer">
 
             <div class="listTitle"> <?= $list['title']; ?>
                 <div>
                     <form action="/updateLists.php" method="POST">
-                        <input type="hidden" name="id" value="<?= $list['id'] ?>" />
+                        <input type="hidden" name="id" value="<?= $list['id']; ?>" />
                         <input class="inputImage" type="image" src="/images/more.png" alt="icon for edit">
 
                     </form>
                 </div>
                 <div>
                     <form action="/app/lists/delete.php" method="POST">
-                        <input type="hidden" name="id" value="<?= $list['id'] ?>" />
+                        <input type="hidden" name="id" value="<?= $list['id']; ?>" />
                         <input class="inputImage" type="image" src="/images/delete.png" alt="icon for delete">
 
                     </form>
@@ -70,7 +69,6 @@
                         <td><?= $taskItem['deadline']; ?></td>
                         <!-- Hidden form for edit tasks and onnects task with its id  -->
                         <td>
-
                             <form action="/updateTasks.php" method="POST">
                                 <input type="hidden" name="id" value="<?= $taskItem['id'] ?>" />
                                 <input class="inputImage" type="image" src="/images/more.png" alt="icon for edit">
