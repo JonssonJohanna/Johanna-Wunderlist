@@ -16,7 +16,6 @@
     <!-- Functions that loops out list titles -->
     <?php $lists = addLists($database); ?>
     <?php foreach ($lists as $list) : ?>
-
         <div class="tableContainer">
 
             <div class="listTitle"> <?= $list['title']; ?>

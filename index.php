@@ -22,8 +22,7 @@
 <?php
 if (isset($_SESSION['user'])) :
     $currentUser = $_SESSION['user']['id'];
-    $todaysTasks = collectTodaysTasks($database, $currentUser);
-?>
+    $todaysTasks = collectTodaysTasks($database, $currentUser); ?>
     <h3 class="todaysTaskTitle">Tasks that needs to be done today</h3>
     <table class="taskTodayContainer">
         <tr class="columnName">

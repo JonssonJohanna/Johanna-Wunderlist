@@ -68,9 +68,7 @@
             <?php if (isset($_SESSION['messagePassword'])) :
                 echo $_SESSION['messagePassword'];
                 unset($_SESSION['messagePassword']);
-
                 if (isset($_SESSION['user']['messagePassword'])) : ?>
-
                 <?php endif; ?>
             <?php endif; ?>
         </div>
