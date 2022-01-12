@@ -23,7 +23,9 @@
 if (isset($_SESSION['user'])) :
     $currentUser = $_SESSION['user']['id'];
     $todaysTasks = collectTodaysTasks($database, $currentUser); ?>
-    <h3 class="todaysTaskTitle">Tasks that needs to be done today</h3>
+    <h3 class="todaysTaskTitle">Tasks that needs to be done today
+        <img src="/images/DUE.png" width="20px" height="20px">
+    </h3>
     <div class="containerToday">
         <table class="taskTodayContainer">
             <tr class="columnName">
