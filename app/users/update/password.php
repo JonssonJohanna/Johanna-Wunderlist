@@ -16,7 +16,7 @@ if (isset($_POST['newPassword'])) {
         $_SESSION['messageError'] = "Passwords do not match";
         redirect("/update.php");
     }
-    $newPassword = $_POST['newPassword'];
+    // $newPassword = $_POST['newPassword'];
 
     if (strlen($newPassword) < 16) {
         $_SESSION['messageError'] = "Password must be at least 16 characters long";
