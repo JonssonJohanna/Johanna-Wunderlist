@@ -1,8 +1,8 @@
 @font-face {
   font-family: 'Poppins-Regular';
   src: local('Poppins-Regular'),
-    url('/font/Poppins-Regular.woff2') format('woff2'),
-    url('/font/Poppins-Regular.woff') format('woff');
+    url('../font/Poppins-Regular.woff2') format('woff2'),
+    url('../font/Poppins-Regular.woff') format('woff');
 }
 
 * {
@@ -16,13 +16,10 @@
 
 body {
   background-color: #9da993;
-  width: 100vw;
-}
-
-html * {
   font-size: 1em;
   font-family: Poppins-Regular;
   color: #353621;
+  width: 100vw;
 }
 
 .navbar-brand {
