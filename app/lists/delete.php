@@ -11,6 +11,12 @@ if (isset($_POST['id'])) {
     $insertSQL = $database->prepare('DELETE FROM lists WHERE id = :id');
     $insertSQL->bindParam(':id', $list, PDO::PARAM_INT);
     $insertSQL->execute();
+
+    $insertSQL = $database->prepare('DELETE FROM tasks WHERE list_id = :id');
+    $insertSQL->bindParam(':id', $list, PDO::PARAM_INT);
+    $insertSQL->execute();
 }
+
+// DELETE FROM lists INNER JOIN tasks WHERE lists.id = :id AND tasks.user_id = :id;
 
 redirect('/../../create.php');

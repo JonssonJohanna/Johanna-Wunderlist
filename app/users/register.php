@@ -5,7 +5,6 @@ declare(strict_types=1);
 require __DIR__ . '/../autoload.php';
 
 // In this file we register a new user.
-
 // To add a users name, email, password into database
 if (isset($_POST['name'], $_POST['email'], $_POST['password'], $_POST['repeatPassword'])) {
     $name = trim(filter_var($_POST['name'], FILTER_SANITIZE_STRING));
@@ -31,11 +30,7 @@ if (isset($_POST['name'], $_POST['email'], $_POST['password'], $_POST['repeatPas
     $sql->bindParam(':email', $email, PDO::PARAM_STR);
     $sql->bindParam(':password', $password, PDO::PARAM_STR);
 
-
-    // runs the email, name and password in database
     $sql->execute();
 }
 
-
-
-// redirect('/index.php');
+redirect('/index.php');

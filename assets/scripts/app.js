@@ -2,10 +2,10 @@
 const forms = document.querySelector('.formCheckbox');
 const tasks = document.querySelectorAll('input[type=checkbox]');
 
-function handleClick(event) {
+function completedTasks(event) {
   event.target.parentNode.submit();
 }
 
 tasks.forEach((task) => {
-  task.addEventListener('click', handleClick);
+  task.addEventListener('click', completedTasks);
 });
