@@ -5,10 +5,10 @@
 <article>
 
     <h1><?php echo $config['title']; ?></h1>
-    <p>This is your home page.</p>
 
 
     <?php if (isset($_SESSION['user']) && $_SESSION['user']) : ?>
+        <p>This is your home page.</p>
         <p>Welcome <?php echo $_SESSION['user']['name']; ?>, you are logged in!</p>
 
     <?php endif; ?>
