@@ -44,7 +44,7 @@
                     <th class="column">Delete</th>
                 </tr>
 
-                <!-- Functions that loops out tasks -->
+                <!-- Loops through all tasks and is connected with current user -->
                 <?php $tasks = collectTasks($database, $list['id']);  ?>
                 <?php foreach ($tasks as $taskItem) : ?>
                     <tr>

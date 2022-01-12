@@ -18,7 +18,7 @@
 
 </article>
 
-<!-- Connects with database and function -->
+<!-- Loops through all tasks with deadline today. -->
 <?php
 if (isset($_SESSION['user'])) :
     $currentUser = $_SESSION['user']['id'];
