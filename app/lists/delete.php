@@ -17,6 +17,5 @@ if (isset($_POST['id'])) {
     $insertSQL->execute();
 }
 
-// DELETE FROM lists INNER JOIN tasks WHERE lists.id = :id AND tasks.user_id = :id;
 
 redirect('/../../create.php');
