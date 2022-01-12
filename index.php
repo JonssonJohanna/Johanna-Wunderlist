@@ -24,32 +24,34 @@ if (isset($_SESSION['user'])) :
     $currentUser = $_SESSION['user']['id'];
     $todaysTasks = collectTodaysTasks($database, $currentUser); ?>
     <h3 class="todaysTaskTitle">Tasks that needs to be done today</h3>
-    <table class="taskTodayContainer">
-        <tr class="columnName">
-            <th class="column">Title</th>
-            <th class="column">Description</th>
-            <th class="column">Date</th>
-        </tr>
-
-        <?php foreach ($todaysTasks as $todayTask) : ?>
-            <tr>
-
-                <td>
-                    <?= $todayTask['title']; ?>
-                </td>
-
-                <td>
-                    <?= $todayTask['description']; ?>
-                </td>
-
-                <td>
-                    <?= $todayTask['deadline']; ?>
-                </td>
-
+    <div class="containerToday">
+        <table class="taskTodayContainer">
+            <tr class="columnName">
+                <th class="column">Title</th>
+                <th class="column">Description</th>
+                <th class="column">Date</th>
             </tr>
-        <?php endforeach; ?>
 
-    </table>
+            <?php foreach ($todaysTasks as $todayTask) : ?>
+                <tr>
+
+                    <td>
+                        <?= $todayTask['title']; ?>
+                    </td>
+
+                    <td>
+                        <?= $todayTask['description']; ?>
+                    </td>
+
+                    <td>
+                        <?= $todayTask['deadline']; ?>
+                    </td>
+
+                </tr>
+            <?php endforeach; ?>
+
+        </table>
+    </div>
 <?php endif; ?>
 
 <?php require __DIR__ . '/views/footer.php'; ?>

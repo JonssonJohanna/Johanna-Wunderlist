@@ -54,7 +54,10 @@ body {
   display: flex;
   flex-direction: column;
 }
-
+.containerToday {
+  display: flex;
+  flex-direction: column;
+}
 .taskTodayContainer {
   border: #353621 solid 2px;
   margin-bottom: 1rem;
