@@ -39,12 +39,13 @@
                 unset($_SESSION['messageEmail']); ?>
 
             <?php endif; ?>
+        </div>
     </form>
 
     <h3>Edit password</h3>
     <form action="/app/users/update/password.php" method="POST">
 
-        <div class="mb-3">
+        <div>
             <label for="newPassword">Write new password</label>
             <input class="form-control" type="password" name="newPassword" id="newPassword">
             <small class="form-text">Write your new password.</small>
@@ -58,7 +59,7 @@
 
             <?php endif; ?>
         </div>
-        <div class="mb-3">
+        <div>
             <label for="confirmNewPassword">Confirm new password</label>
             <input class="form-control" type="password" name="confirmNewPassword" id="confirmNewPassword">
             <small class="form-text">Confirm your new password.</small>
