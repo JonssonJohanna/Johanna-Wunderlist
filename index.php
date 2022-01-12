@@ -29,7 +29,6 @@ if (isset($_SESSION['user'])) :
             <th class="column">Title</th>
             <th class="column">Description</th>
             <th class="column">Date</th>
-
         </tr>
 
         <?php foreach ($todaysTasks as $todayTask) : ?>

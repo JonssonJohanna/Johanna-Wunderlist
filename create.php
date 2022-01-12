@@ -74,7 +74,7 @@
 
                             </form>
                         </td>
-                        <td class="delete">
+                        <td>
 
                             <form action="/app/tasks/delete.php" method="POST">
                                 <input type="hidden" name="id" value="<?= $taskItem['id'] ?>" />
