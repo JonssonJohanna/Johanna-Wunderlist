@@ -33,13 +33,12 @@
             <small class="form-text">Please provide your new email address.</small>
             <button type="submit">Update email</button>
         </div>
-        <div class="alertText">
-            <?php if (isset($_SESSION['messageEmail'])) :
-                echo $_SESSION['messageEmail'];
-                unset($_SESSION['messageEmail']); ?>
 
-            <?php endif; ?>
-        </div>
+        <?php if (isset($_SESSION['messageEmail'])) :
+            echo $_SESSION['messageEmail'];
+            unset($_SESSION['messageEmail']); ?>
+        <?php endif; ?>
+
     </form>
 
     <h3>Edit password</h3>
@@ -51,6 +50,12 @@
             <small class="form-text">Write your new password.</small>
 
         </div>
+        <div>
+            <label for="confirmNewPassword">Confirm new password</label>
+            <input class="form-control" type="password" name="confirmNewPassword" id="confirmNewPassword">
+            <small class="form-text">Confirm your new password.</small>
+        </div>
+        <button type="submit">Update password</button>
         <div class="alertText">
             <?php
             if (isset($_SESSION['messageError'])) :
@@ -59,20 +64,14 @@
 
             <?php endif; ?>
         </div>
-        <div>
-            <label for="confirmNewPassword">Confirm new password</label>
-            <input class="form-control" type="password" name="confirmNewPassword" id="confirmNewPassword">
-            <small class="form-text">Confirm your new password.</small>
-        </div>
-        <button type="submit">Update password</button>
-        <div class="alertText">
-            <?php if (isset($_SESSION['messagePassword'])) :
-                echo $_SESSION['messagePassword'];
-                unset($_SESSION['messagePassword']);
-                if (isset($_SESSION['user']['messagePassword'])) : ?>
-                <?php endif; ?>
+
+        <?php if (isset($_SESSION['messagePassword'])) :
+            echo $_SESSION['messagePassword'];
+            unset($_SESSION['messagePassword']);
+            if (isset($_SESSION['user']['messagePassword'])) : ?>
             <?php endif; ?>
-        </div>
+        <?php endif; ?>
+
 
     </form>
 

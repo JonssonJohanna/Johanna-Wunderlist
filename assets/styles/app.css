@@ -42,6 +42,11 @@ body {
   height: 10px;
   height: 15px;
 }
+
+.alertText {
+  color: tomato;
+}
+
 .table {
   display: flex;
   justify-content: space-between;
@@ -98,6 +103,7 @@ button:hover {
 }
 
 .todaysTaskTitle {
+  margin-top: 1rem;
   font-weight: bold;
   font-size: 1rem;
 }
@@ -123,10 +129,6 @@ button:hover {
   h3 {
     font-size: 1rem;
     font-weight: bold;
-  }
-
-  .alertText {
-    color: tomato;
   }
 
   .inputImage {
@@ -164,6 +166,7 @@ button:hover {
   }
 
   .todaysTaskTitle {
+    margin-top: 1rem;
     font-weight: bold;
     font-size: 1rem;
   }

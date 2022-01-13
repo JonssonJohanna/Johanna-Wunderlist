@@ -21,7 +21,7 @@ function addLists(PDO $database): array
     return $lists;
 }
 
-// function that fetch tasks and allows to display them
+// Function that fetch tasks and allows to display them
 function collectTasks(PDO $database, int $listId): array
 {
     $sql = $database->prepare('SELECT * FROM tasks WHERE list_id = :id');
@@ -31,6 +31,7 @@ function collectTasks(PDO $database, int $listId): array
     return $tasks;
 }
 
+// Function that collects tasks in a list with deadline today
 function collectTodaysTasks(PDO $database, int $userId): array
 {
     $userId = $_SESSION['user']['id'];

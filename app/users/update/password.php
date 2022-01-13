@@ -8,7 +8,6 @@ require __DIR__ . '/../../autoload.php';
 
 if (isset($_POST['newPassword'])) {
     $newPassword = password_hash($_POST['newPassword'], PASSWORD_DEFAULT);
-    $confirmNewPassword = password_hash($_POST['confirmNewPassword'], PASSWORD_DEFAULT);
 
     // Error messages
 
@@ -16,7 +15,6 @@ if (isset($_POST['newPassword'])) {
         $_SESSION['messageError'] = "Passwords do not match";
         redirect("/update.php");
     }
-    // $newPassword = $_POST['newPassword'];
 
     if (strlen($newPassword) < 16) {
         $_SESSION['messageError'] = "Password must be at least 16 characters long";
@@ -36,10 +34,7 @@ if (isset($_POST['newPassword'])) {
     $sql->execute();
 
     $_SESSION['messagePassword'] = "You have succsessfully changed your password";
-
-    $_SESSION['user'][] = $sql->fetch(PDO::FETCH_ASSOC);
 }
-
 
 
 redirect('/update.php');

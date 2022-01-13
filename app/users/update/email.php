@@ -17,7 +17,6 @@ if (isset($_POST['newEmail'])) {
 
 
     $sql->execute();
-    $_SESSION['user'] = $sql->fetch(PDO::FETCH_ASSOC);
 
     $_SESSION['messageEmail'] = "You have succsessfully updated your email ";
 };
