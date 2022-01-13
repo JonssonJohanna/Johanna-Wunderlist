@@ -18,16 +18,18 @@ Follow the steps below for installation.
 
 Code review written by [Jane Doh](https://github.com/username).
 
-1. `example.js:10-15` - Remember to think about X and this could be refactored using the amazing Y function.
-2. `example.js:10-15` - Remember to think about X and this could be refactored using the amazing Y function.
-3. `example.js:10-15` - Remember to think about X and this could be refactored using the amazing Y function.
-4. `example.js:10-15` - Remember to think about X and this could be refactored using the amazing Y function.
-5. `example.js:10-15` - Remember to think about X and this could be refactored using the amazing Y function.
-6. `example.js:10-15` - Remember to think about X and this could be refactored using the amazing Y function.
-7. `example.js:10-15` - Remember to think about X and this could be refactored using the amazing Y function.
-8. `example.js:10-15` - Remember to think about X and this could be refactored using the amazing Y function.
-9. `example.js:10-15` - Remember to think about X and this could be refactored using the amazing Y function.
-10. `example.js:10-15` - Remember to think about X and this could be refactored using the amazing Y function.
+1. `app.css:25` - Here you forgot to use consistent case syntax on one class!
+2. `app/users/register.php:37` - After signing up, it would be nice to be redirected to the login page.
+3. `app/posts` - I think you could delete the posts-folder since it’s not being used.
+4. Really good error messages and success-messages everywhere, something I’d like to implement on my own code.
+5. You have easy to read code with helpful comments
+6. `create.php:100` - When creating a task, I would personally like it when description is not required so that it’s faster for the user to create tasks.
+7. `update.php:45-75` - When changing password, I think it’s awesome that you have to write the new password twice, and that you check that it matches. I’d like to implement that on my own code. Maybe it’d be even more secure if you make it so that you have to write your current password as well. 
+8. `index.php:29-54` - In the table on the homepage, it’d be nice to have some margin to the left of the tasks. 
+9. Perhaps you could move the buttons on the edit profile page to align on the same column, or make them consistently either inline och block.
+10. `navigation.php:19-21` - I would move the logout button to the end of the navbar or separate it from all the other links. It’s easy to accidentally logout with the button in between Home and Edit profile.
+
+
 
 # Testers
 
