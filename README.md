@@ -39,7 +39,7 @@ Tested by the following people:
 2. Hanna Rosenberg
 
 
-Wunderlist+
+# Wunderlist+
 
 Amanda Karlsson added:
 
