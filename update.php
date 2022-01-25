@@ -75,6 +75,12 @@
 
     </form>
 
+    <form action="/app/users/delete.php" method="post">
+        <input type="hidden" value="<?= $_SESSION['user']['id'] ?>" name="deleteUser" />
+        <button type="submit" class="">Delete account</button>
+    </form>
+
+
 </article>
 
 

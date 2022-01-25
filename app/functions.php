@@ -46,3 +46,13 @@ function collectTodaysTasks(PDO $database, int $userId): array
     $todaysTasks =  $sql->fetchAll(PDO::FETCH_ASSOC);
     return $todaysTasks;
 }
+
+//Collect all lists from a specific user.
+function getLists($id, $database): array
+{
+    $statement = $database->query('SELECT * FROM lists WHERE user_id = :user_id;');
+    $statement->bindParam(':user_id', $id, PDO::PARAM_INT);
+    $statement->execute();
+    $lists = $statement->fetchAll(PDO::FETCH_ASSOC);
+    return $lists;
+}

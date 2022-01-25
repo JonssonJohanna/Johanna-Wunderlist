@@ -46,6 +46,24 @@ if (isset($_POST['id'])) {
     $_SESSION['user'][] = $sql->fetch(PDO::FETCH_ASSOC);
 }
 
+// change the list of the task
+if (isset($_POST['task-list'])) {
+    $listID = trim($_POST['task-list']);
+    $id = $_POST['id'];
+
+    $statement = $database->prepare(
+        'UPDATE tasks SET list_id = :list_id WHERE id = :id'
+    );
+    $statement->bindParam(':list_id', $listID, PDO::PARAM_STR);
+    $statement->bindParam(':id', $id, PDO::PARAM_INT);
+    $statement->execute();
+
+    $_SESSION['user'][] = $sql->fetch(PDO::FETCH_ASSOC);
+};
+
+
+
+
 
 
 

@@ -30,7 +30,18 @@ if (isset($_POST['id'])) {
         <input class="form-control" type="date" name="deadline" id="deadline" value="<?= $editTasks['deadline']; ?>">
         <input type="hidden" name="id" value="<?= $editTasks['id'] ?>" />
     </div>
-
+    <div class="mb-3">
+        <label for="task-list">Choose or change a list to add your task in</label>
+        <select name="task-list" id="task-list">
+            <option value="<?= $list['title'] ?>">Choose</option>
+            <?php foreach (getLists($_SESSION['user']['id'], $database) as $list) : ?>
+                <option value="<?= $list['id']; ?>">
+                    <?= ($list['title']); ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
+    </div>
+    <br>
     <button type="submit">Update task</button>
 </form>
 </details>
