@@ -37,3 +37,11 @@ Tested by the following people:
 
 1. Jennifer Andersson
 2. Hanna Rosenberg
+
+
+Wunderlist+
+
+Amanda Karlsson added:
+
+1. As a user I'm able to delete my account along with all tasks and lists.
+2. As a user I'm able to move a task from one list to another.
